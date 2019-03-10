@@ -1,0 +1,168 @@
+	#ABTestUpload{
+           width: 1000px;
+           height: 900px;
+           position: relative;
+       }
+       
+	#abChoiceTitle, #ABTestUpload>form>div:first-child{
+           padding: 20px;
+           font-size: 40px;
+           font-weight: bold;
+           text-indent: 50px;
+           transform: translateY(20px);
+       }
+       
+       .choice_size{
+           width: 439px;
+           height: 800px;
+           margin: 30px;
+           text-align: center;
+       }
+
+       #firstChoice{
+           float:left;
+       }
+
+       #firstChoice::before{
+           /* 가상요소에서는 content 속성을 반드시(빈칸이라도) */
+           content: " ";
+           width:1px;
+           height:650px;
+           position:absolute; /*가상요소(인라인레벨)를 블록레벨로 바꿀 수 있다.*/
+           border-left:2px dashed rgb(14, 71, 161);
+           right:500px;
+           top:147px;
+       }
+
+       #secondChoice{
+           float: right;
+       }
+
+       .choice_size>div:first-child{
+           width: 380px;
+           height: 260px;
+           background-color: rgb(14, 71, 161);
+           margin:30px auto;
+           text-align: center;
+           line-height: 260px;
+           font-size: 70px;
+           cursor: pointer;
+           color: #fff;
+       }
+
+       .box_writing_btn {
+           position: absolute;
+           bottom:20px;
+           right: 20px;
+       }
+
+       .btn_write {
+           border: none;
+           border-radius: 5px;
+           cursor: pointer;
+           text-align: center;
+           line-height: 40px;
+           width: 100px;
+           height: 40px;
+           background-color: rgb(253, 215, 52);
+   		   font-weight: bold;
+       }
+
+       h2{
+           font-size: 20px;
+           transform: translateY(-20px);
+       }
+       
+       h3{
+           font-size: 20px;
+           position:absolute;
+           top: 60px;
+    		right: 65px;
+       }
+       
+       .choice_size img{
+           width: 380px;
+           height: 260px;
+       }
+       
+       #secondImg{
+       		trnasform: translateY(-260px);
+       }
+       
+       #firstInfo,#secondInfo{
+           width: 355px;
+           min-height: 330px;
+           transform: translateX(30px);
+           border: 1px solid #424242;
+           padding: 10px;
+           text-align: justify;
+           margin-bottom: 15px;
+
+       }
+       .input_css{
+           width: 30px;
+           height: 30px;
+       }
+
+		#datePicker{
+           position: absolute;
+           right: 60px;
+   		   top: 20px;
+       }
+
+       .choice_size>textarea{
+           width: 375px;
+           min-height: 350px;
+       }
+       #titleInput{
+           background-color: transparent;
+           border:none;
+           border-bottom: 2px solid rgb(14, 71, 161);
+           outline: none;
+           font-size: 40px;
+           font-weight: bold;
+       }
+       
+       #titleInput,#datePicker{
+           transform: translateY(15px);
+       }
+       
+       #secondChoice label, #firstChoice label{
+           display: block;
+           width: 380px;
+           height: 260px;
+           cursor: pointer;
+           position:relative;
+       }
+       .img{
+          position: absolute;
+           top:0;
+           left:0;
+       }
+       .tui-datepicker-input.tui-has-focus {
+		    border-color: #aaa;
+		    width: 200px;
+		    height: 50px;
+		}
+       .tui-datepicker {
+	   		border: 1px solid #0E47A1;
+		    top: 20px;
+    		right: -276px;
+		}
+		
+		.tui-datepicker-input input {
+	        width: 100%;
+		    height: 100%;
+		    padding: 6px 27px 6px 10px;
+		    font-size: 20px;
+		    font-weight: bold;
+		    line-height: 14px;
+		    vertical-align: top;
+		    border: 1px solid rgb(14, 71, 161);
+		    color: rgb(14, 71, 161);
+		}
+		.box_writing_btn>a{
+			display: inline-block;
+		    text-decoration: none;
+		    color: #000;
+		}

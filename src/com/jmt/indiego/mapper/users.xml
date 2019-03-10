@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="users">
+
+
+	<select id="selectLogin" resultType="User" parameterType="User">
+		SELECT
+		user_no userNo,id, pwd, nick_name nickName,email,phone_num
+		phoneNum,address1,address2,profile_img profileImg,user_mode
+		userMode,regdate,career_v careerV,portfolio_v portfolioV,address_v
+		addressV,phone_v phoneV
+		FROM users
+		WHERE id = #{id} AND pwd = #{pwd}
+	</select>
+
+	<select id="selectProfileOne" parameterType="int"
+		resultType="User">
+		SELECT user_no userNo,nick_name nickName,user_mode
+		userMode,profile_img profileImg
+		FROM users
+		WHERE user_no=#{userNo}
+	</select>
+
+	<update id="updateProfileImage" parameterType="User">
+		UPDATE users
+		SET profile_img=#{profileImg}
+		WHERE user_no={userNo}
+	</update>
+</mapper>
+

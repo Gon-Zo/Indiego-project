@@ -1,0 +1,272 @@
+	body {
+          font-family: 'Noto Sans KR', sans-serif;
+          background-color: white;
+      }
+	#contents{
+		min-height: 500px;
+	}
+
+      .box_menu {
+          position: fixed;
+          width: 200px;
+          height: 200px;
+      }
+
+      .menu_sub {
+          width: 180px;
+          height: 100px;
+          line-height: 100px;
+          text-align: center;
+          font-size: 23px;
+          background-color: rgb(14, 71, 161);
+          color: white;
+          cursor: pointer;
+
+      }
+
+      #ideaBox {
+
+          position: absolute;
+          width: 1000px;
+          height: 800px;
+      }
+
+      #ideaContentBox {
+          position: absolute;
+          width: 800px;
+          min-height: 500px;
+          left: 200px;
+      }
+
+      .title_idea_main {
+          font-size: 40px;
+      }
+
+      #stick {
+          width: 500px;
+          height:10px;
+          background-color: rgb(253, 215, 52);
+      }
+
+      .definition_idea {
+          width: 780px;
+          height: 80px;
+          font-size: 20px;
+          padding: 10px;
+      }
+
+
+      .box_writing_btn {
+          position: relative;
+          width: 800px;
+          height: 40px;
+          margin-top: 10px;
+          margin-bottom: 10px;
+      }
+
+      .btn {
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          text-align: center;
+
+          line-height: 40px;
+      }
+
+      .btn_write {
+          width: 100px;
+          height: 40px;
+          background-color: rgb(253, 215, 52);
+          position: absolute;
+          right: 10px;
+      }
+
+      .list_top_content {
+          display: inline-block;
+          font-size: 20px;
+          margin-top: 10px;
+
+          width: 250px;
+          height: 25px;
+
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+      }
+
+      .list_top_title {
+          width: 250px;
+          height: 25px;
+
+      }
+
+      .list_top_comment {
+          width: 60px;
+          height: 25px;
+      }
+
+      .list_top_writer {
+          width: 80px;
+          height: 25px;
+      }
+
+      .box_content_idea {
+          width: 800px;
+          min-height: 60px;
+          padding-top: 10px;
+
+          background-color: rgba(228, 228, 228, 0.3);
+          /*box-shadow: 0 0px 50px 0 rgba(0, 0, 0, 0.19);*/
+
+  }
+
+  .list_title {
+      display: inline-block;
+
+      height: 30px;
+      text-align: center;
+      font-size: 20px;
+
+  }
+
+  .list_content_idea div {
+      display: inline-block;
+  }
+
+  .no_idea {
+      width: 60px;
+      height: 30px;
+      text-align: center;
+  }
+
+  .title_idea {
+      width: 360px;
+      height: 30px;
+
+  }
+
+  .writer_idea {
+      width: 210px;
+      height: 30px;
+      text-align: center;
+  }
+
+  .time_idea {
+      width: 150px;
+      height: 30px;
+      text-align: center;
+  }
+
+
+  .paging_idea {
+      width: 800px;
+      height: 30px;
+  }
+
+  .box_search {
+      position: absolute;
+      width: 800px;
+      height: 40px;    
+      bottom: -40px;
+  }
+
+  .select_search {
+      width: 150px;
+      height: 30px;
+      position: absolute;
+      left: 100px;
+      top: 5px;
+  }
+
+  .text_search {
+      width: 300px;
+      height: 30px;
+      position: absolute;
+      left: 270px;
+      top: 2.5px;
+  }
+
+  .box_search_icon{
+      border: 1px solid #acacac;
+      text-align: center;
+      height: 30px;
+      width: 30px;
+      background-color: #acacac;
+      line-height: 30px;
+      position: absolute;
+      top: 5px;
+      right: 180px;
+      cursor: pointer;
+  }
+
+  .idea_writing {
+      width: 800px;
+      height: 30px;
+      font-size: 17px;
+      margin-bottom: 10px;
+  }
+
+  .list_one {
+      overflow: hidden;
+      white-space: nowrap;
+  text-overflow: ellipsis;
+  }
+  .idea_writing{
+      border-bottom: 1px solid rgba(228, 228, 228, 0.9);
+  }
+  
+  li>.title_idea{
+      cursor: pointer;
+  }
+  li>.list_top_title{
+      cursor: pointer;
+  }
+  #ABTestInfo{
+      transform: translateY(-10px);
+  }
+  .ABTest_info_box{
+      padding: 0 20px;
+      width: 350px;
+      height: 340px;
+   	  background-color: ivory;
+      display: inline-block;
+      vertical-align: middle;
+  }
+  .ABTest_info_box>dt{
+        font-size: 24px;
+	    font-weight: bold;
+	    margin-top: 20px;
+	    margin-right: 100px;
+	    border-bottom: 4px solid rgb(14, 71, 161);
+	    display: inline-block;
+	    padding-right: 30px;
+	    padding-bottom: 8px;
+	    text-shadow: 1px 1px 2px grey;
+  }
+  .ABTest_info_box>dd{
+        display: inline-block;
+	    margin-top: 10px;
+	    border-bottom: 1px solid lightgray;
+	    padding-bottom: 5px;
+	    box-shadow: 0px 1px rgb(253, 215, 52);
+	    overflow: hidden;
+	    white-space: nowrap;
+	    text-overflow: ellipsis;
+  }
+  .detail>a,.ABTest_info_box>dd>a{
+	  	text-decoration: none;
+	  	color: #000;
+  }
+  .dd1{
+  		width: 220px;
+  }
+   .dd2{
+   		text-indent: 30px;
+	    width: 100px;
+	    margin-left: -7px;
+   }
+   .dd3{
+   		text-indent:30px;
+   		width: 120px;
+	    margin-left: -7px;
+   }

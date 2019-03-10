@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<settings>
+		<setting name="cacheEnabled" value="false" />
+		<setting name="jdbcTypeForNull" value="NULL" />
+	</settings>
+
+	<!--알리아스 설정 -->
+	<typeAliases>
+		<typeAlias type="com.jmt.indiego.vo.AbChoice"
+			alias="AbChoice" />
+		<typeAlias type="com.jmt.indiego.vo.AbTest" alias="AbTest" />
+		<typeAlias type="com.jmt.indiego.vo.Attack" alias="Attack" />
+		<typeAlias type="com.jmt.indiego.vo.Badge" alias="Badge" />
+		<typeAlias type="com.jmt.indiego.vo.Bookmark"
+			alias="Bookmark" />
+		<typeAlias type="com.jmt.indiego.vo.BuyList" alias="BuyList" />
+		<typeAlias type="com.jmt.indiego.vo.Carrer" alias="Carrer" />
+		<typeAlias type="com.jmt.indiego.vo.CheckList"
+			alias="CheckList" />
+		<typeAlias type="com.jmt.indiego.vo.CheckPeople"
+			alias="CheckPeople" />
+		<typeAlias type="com.jmt.indiego.vo.ChildStep"
+			alias="ChildStep" />
+		<typeAlias type="com.jmt.indiego.vo.Follow" alias="Follow" />
+		<typeAlias type="com.jmt.indiego.vo.Free" alias="Free" />
+		<typeAlias type="com.jmt.indiego.vo.Game" alias="Game" />
+		<typeAlias type="com.jmt.indiego.vo.GameSpec"
+			alias="GameSpec" />
+		<typeAlias type="com.jmt.indiego.vo.Genre" alias="Genre" />
+		<typeAlias type="com.jmt.indiego.vo.Idea" alias="Idea" />
+		<typeAlias type="com.jmt.indiego.vo.Image" alias="Image" />
+		<typeAlias type="com.jmt.indiego.vo.InderReview"
+			alias="InderReview" />
+		<typeAlias type="com.jmt.indiego.vo.Like" alias="Like" />
+		<typeAlias type="com.jmt.indiego.vo.Newspeed"
+			alias="Newspeed" />
+		<typeAlias type="com.jmt.indiego.vo.Notice" alias="Notice" />
+		<typeAlias type="com.jmt.indiego.vo.PageVO" alias="PageVO" />
+		<typeAlias type="com.jmt.indiego.vo.ParentStep"
+			alias="ParentStep" />
+		<typeAlias type="com.jmt.indiego.vo.Portfolio"
+			alias="Portfolio" />
+		<typeAlias type="com.jmt.indiego.vo.Project" alias="Project" />
+		<typeAlias type="com.jmt.indiego.vo.ProjectCheck"
+			alias="ProjectCheck" />
+		<typeAlias type="com.jmt.indiego.vo.ProjectFIle"
+			alias="ProjectFile" />
+		<typeAlias type="com.jmt.indiego.vo.ProjectUpdate"
+			alias="ProjectUpdate" />
+		<typeAlias type="com.jmt.indiego.vo.Question"
+			alias="Question" />
+		<typeAlias type="com.jmt.indiego.vo.Reply" alias="Reply" />
+		<typeAlias type="com.jmt.indiego.vo.Review" alias="Review" />
+		<typeAlias type="com.jmt.indiego.vo.Sos" alias="Sos" />
+		<typeAlias type="com.jmt.indiego.vo.Status" alias="Status" />
+		<typeAlias type="com.jmt.indiego.vo.Step" alias="Step" />
+		<typeAlias type="com.jmt.indiego.vo.Team" alias="Team" />
+		<typeAlias type="com.jmt.indiego.vo.User" alias="User" />
+		<typeAlias type="com.jmt.indiego.vo.UserBadge"
+			alias="UserBadge" />
+	</typeAliases>
+
+
+
+
+	<!--맵퍼 설정 -->
+	<mappers>
+		<mapper resource="com/jmt/indiego/mapper/abchoice.xml" />
+		<mapper resource="com/jmt/indiego/mapper/abtest.xml" />
+		<mapper resource="com/jmt/indiego/mapper/attack.xml" />
+		<mapper resource="com/jmt/indiego/mapper/badge.xml" />
+		<mapper resource="com/jmt/indiego/mapper/bookmark.xml" />
+		<mapper resource="com/jmt/indiego/mapper/buylist.xml" />
+		<mapper resource="com/jmt/indiego/mapper/career.xml" />
+		<mapper resource="com/jmt/indiego/mapper/checklist.xml" />
+		<mapper resource="com/jmt/indiego/mapper/checkpeople.xml" />
+		<mapper resource="com/jmt/indiego/mapper/childstep.xml" />
+		<mapper resource="com/jmt/indiego/mapper/follow.xml" />
+		<mapper resource="com/jmt/indiego/mapper/free.xml" />
+		<mapper resource="com/jmt/indiego/mapper/game.xml" />
+		<mapper resource="com/jmt/indiego/mapper/gamespec.xml" />
+		<mapper resource="com/jmt/indiego/mapper/genre.xml" />
+		<mapper resource="com/jmt/indiego/mapper/idea.xml" />
+		<mapper resource="com/jmt/indiego/mapper/image.xml" />
+		<mapper resource="com/jmt/indiego/mapper/inderreview.xml" />
+		<mapper resource="com/jmt/indiego/mapper/like.xml" />
+		<mapper resource="com/jmt/indiego/mapper/newspeed.xml" />
+		<mapper resource="com/jmt/indiego/mapper/notice.xml" />
+		<mapper resource="com/jmt/indiego/mapper/parentStep.xml" />
+		<mapper resource="com/jmt/indiego/mapper/portfolio.xml" />
+		<mapper resource="com/jmt/indiego/mapper/projectcheck.xml" />
+		<mapper resource="com/jmt/indiego/mapper/projectfile.xml" />
+		<mapper resource="com/jmt/indiego/mapper/project.xml" />
+		<mapper resource="com/jmt/indiego/mapper/projectupdate.xml" />
+		<mapper resource="com/jmt/indiego/mapper/question.xml" />
+		<mapper resource="com/jmt/indiego/mapper/reply.xml" />
+		<mapper resource="com/jmt/indiego/mapper/review.xml" />
+		<mapper resource="com/jmt/indiego/mapper/sos.xml" />
+		<mapper resource="com/jmt/indiego/mapper/status.xml" />
+		<mapper resource="com/jmt/indiego/mapper/step.xml" />
+		<mapper resource="com/jmt/indiego/mapper/team.xml" />
+		<mapper resource="com/jmt/indiego/mapper/userbadge.xml" />
+		<mapper resource="com/jmt/indiego/mapper/users.xml" />
+	</mappers>
+
+</configuration>

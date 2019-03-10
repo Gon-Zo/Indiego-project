@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="idea">
+
+	<select id="selctBestTenIdea" resultType="Idea">
+		SElECT no , title , contents , type ,nickname,regdate
+		from(select no , title , nickname , contents , type , regdate , rownum r
+		from(select i.no , i.title , i.contents , i.type , i.regdate ,
+		u.nick_name nickname
+		from idea i , users u
+		WHERE i.user_no = u.user_no
+		order by 5 desc ))
+		Where r between 1 and 5
+	</select>
+
+
+</mapper>
+

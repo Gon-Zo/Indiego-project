@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="likes">
+
+	<select id="selectLikes" resultType="Like" parameterType="Like">
+		select no , type , contents_no contentsNo, regdate
+		from likes
+		where type='G'
+		and contents_no=#{contentsNo}
+		and user_no=#{userNo}
+	</select>
+
+	<insert id="inesrtGameHeart" parameterType="Like">
+		INSERT INTO LIKES (NO, TYPE, USER_NO, CONTENTS_NO, REGDATE)
+		VALUES (likes_seq.nextval, 'G', #{userNo}, #{contentsNo}, systimestamp)
+	</insert>
+
+</mapper>

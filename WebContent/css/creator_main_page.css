@@ -1,0 +1,323 @@
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+
+            /*background-color: rgb(210, 210, 210);*/
+        }
+
+        .wrap {
+            width: 1000px;
+            margin: auto;
+        }
+
+        .box_content {
+            width: 1000px;
+            min-height: 500px;
+            position: relative;
+        }
+
+        .home_creator {
+            font-size: 30px;
+            width: 1000px;
+            height: 40px;
+            position: absolute;
+            top: 20px;
+            color: rgb(14, 71, 161);
+        }
+
+        div.btn {
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            height: 40px;
+            line-height: 40px;
+        }
+
+        .btn.btn_project_new {
+            width: 120px;
+            position: absolute;
+            background-color: rgb(253, 215, 52);
+            top: 100px;
+            right: 50px;
+        }
+
+        .btn.btn_spec_new {
+            width: 120px;
+            position: absolute;
+            background-color: rgb(253, 215, 52);
+            top: 550px;
+            right: 50px;
+        }
+
+        .box_tap_one {
+            width: 1000px;
+            height: 40px;
+            position: absolute;
+            top: 120px;
+        }
+
+        .box_tap_two {
+            width: 1000px;
+            height: 40px;
+            position: absolute;
+            top: 570px;
+        }
+
+        div.tap {
+            display: inline-block;
+            width: 120px;
+            height: 40px;
+            background-color: white;
+            cursor: pointer;
+            text-align: center;
+            line-height: 40px;
+        }
+
+        .tap.on {
+            background-color: #0e47a1;
+            color: white;
+        }
+
+        li.project{
+            border-bottom: 2px solid rgba(228, 228, 228, 0.6);
+            line-height: 70px;
+        }
+        li.career{
+
+            line-height: 70px;
+            border-bottom: 2px solid rgba(228, 228, 228, 0.6);
+        }
+        li.portfolio {
+            line-height: 63px;
+            margin-bottom: 10px;
+            border-bottom: 2px solid rgba(228, 228, 228, 0.6);
+        }
+
+        .box_project {
+            width: 1000px;
+            height: 320px;
+            position: absolute;
+            top: 160px;
+            overflow: scroll;
+            overflow-x: hidden;
+            background-color: rgba(228, 228, 228, 0.3);
+        }
+
+        .box_portfolio {
+            width: 980px;
+            height: 300px;
+            position: absolute;
+            top: 610px;
+            overflow: scroll;
+            overflow-x: hidden;
+            background-color: rgba(228, 228, 228, 0.3);
+            padding: 10px;
+        }
+
+        .box_head {
+            display: inline-block;
+            width: 230px;
+            height: 50px;
+            font-size: 20px;
+            /*left: 5px;*/
+            line-height: 50px;
+            text-indent: 30px;
+        }
+
+        .box_head_portfolio {
+            display: inline-block;
+            width: 240px;
+            height: 50px;
+            font-size: 20px;
+            /*left: 5px;*/
+            line-height: 50px;
+            text-indent: 95px;
+        }
+
+        .text_project {
+            text-indent: 30px;
+
+            display: inline-block;
+            width: 240px;
+            height: 50px;
+            font-size: 18px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .text_career {
+            text-indent: 30px;
+            display: inline-block;
+            width: 230px;
+            height: 50px;
+            font-size: 18px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .text_portfolio {
+            text-indent: 30px;
+            display: inline-block;
+            width: 240px;
+            height: 50px;
+            font-size: 18px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        #careerBox {
+            display: none;
+        }
+
+        .popup {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background-color: rgba(0, 0, 0, .8);
+            background-position: center 105px;
+            display: none;
+        }
+
+        .box_popup {
+            top: 130px;
+            left: 50%;
+            position: absolute;
+            padding: 10px;
+            background-color: #fff;
+            width: 500px;
+            display: none;
+            margin-left: -260px;
+        }
+        #portfolioPopup{
+        
+         width:550px;
+         height:370px;
+        }
+        #careerPopup{
+         width:550px;
+         height:370px;
+        }
+        #careerPopup>input{
+        display:block;
+        }
+        #careerPopup>.box_data_input{
+        display:inline-block;
+        }
+        
+        .btn_popup {
+            width: 100px;
+            height: 40px;
+            background-color: rgb(253, 215, 52);
+             border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            line-height: 40px;
+            
+        }
+        .btn_popup.cancel{
+            width: 100px;
+            height: 40px;
+            background-color: rgb(210, 210, 210);
+             border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            line-height: 40px;
+        }
+
+        #projectName {
+            width: 380px;
+            height: 30px;
+        }
+        
+
+        .text_input {
+            width: 380px;
+            height: 30px;
+            margin-top: 10px;
+        }
+
+        input#jobInput {
+            margin-bottom: 10px;
+        }
+
+        input.date_input {
+            width: 150px;
+            height: 30px;
+            margin-top: 10px;
+        }
+
+        .title_portfolio_new {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+
+        input.upload {
+            position: relative;
+            opacity: 0;
+        }
+
+        button.replace {
+            position: absolute;
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            background-color: rgb(14, 71, 161);
+            color: #fff;
+            
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .box_button {
+            position: absolute;
+            right: 20px;
+
+        }
+
+        .btn.btn_secret {
+            font-size: 25px;
+
+        }
+
+        .popup_title {
+            width: 500px;
+            height: 50px;
+            font-size: 25px;
+        }
+
+        .launching {
+            display: none;
+        }
+
+        #check1, #check2 {
+            display: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        .text_portfolio{
+            cursor: pointer;
+        }
+        .text_career{
+            cursor: pointer;
+        }
+
+
+        .title_stick {
+            width: 500px;
+            height: 5px;
+            background-color: rgb(14, 71, 161);
+            margin-bottom: 10px;
+            position: absolute;
+            top:60px;
+        }

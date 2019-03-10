@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="gamespec">
+
+
+	<select id="selectOneM" parameterType="int"
+		resultType="GameSpec">
+		select nvl(os,'없음') os , nvl(processor,'없음') processor ,
+		nvl( memory ,'없음') memory , nvl( graphic , '없음' ) graphic ,
+		nvl( directx , '없음') directx , nvl( network,'없음') network ,
+		nvl(storage_space,'없음') storageSpec
+		, nvl(type,'없음') gsType
+		from game_spec
+		where project_no = #{no}
+		and type = 'M'
+	</select>
+
+	<select id="selectOneB" parameterType="int"
+		resultType="GameSpec">
+		select nvl(os,'없음') os , nvl(processor,'없음') processor ,
+		nvl( memory ,'없음') memory , nvl( graphic , '없음' ) graphic ,
+		nvl( directx , '없음') directx , nvl( network,'없음') network ,
+		nvl(storage_space,'없음') storageSpec
+		, nvl(type,'없음') gsType
+		from game_spec
+		where project_no = #{no}
+		and type = 'B'
+	</select>
+	
+	<insert id="insertSpecM" parameterType="GameSpec">
+		INSERT INTO GAME_SPEC(no,os,processor,memory,graphic,directx,network,storage_space,regdate,type,project_no)
+		VALUES(game_spec_seq.nextval,#{osM},#{processorM},#{memoryM},#{graphicM},#{directxM},#{networkM},#{storageSpaceM},systimestamp,'M',#{projectNoM})
+	</insert>
+	
+	<insert id="insertSpecB" parameterType="GameSpec">
+		INSERT INTO GAME_SPEC(no,os,processor,memory,graphic,directx,network,storage_space,regdate,type,project_no)
+		VALUES(game_spec_seq.nextval,#{osB},#{processorB},#{memoryB},#{graphicB},#{directxB},#{networkB},#{storageSpaceB},systimestamp,'B',#{projectNoB})
+	</insert>
+
+</mapper>

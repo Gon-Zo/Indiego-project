@@ -1,0 +1,363 @@
+body {
+    font-weight: bold;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+#wrap {
+    width: 1000px;
+    min-height: 900px;
+    margin: auto;
+    position: relative;
+    border: 2px solid #0e47a1;
+}
+
+.tab_project {
+    width: 120px;
+    height: 40px;
+    background: #b2b2b2;
+    outline: none;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    border-radius: 7px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.tab_launching {
+    width: 120px;
+    height: 40px;
+    background: #fdd734;
+    outline: none;
+    color: #0e47a1;
+    font-weight: bold;
+    position: relative;
+    left:-5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 7px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.border_tap {
+    border-top: 3px solid #fdd734;
+}
+
+.tab_update {
+    width: 120px;
+    height: 40px;
+    background: #b2b2b2;
+    outline: none;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    border-radius: 7px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.tab_inquiry {
+    width: 120px;
+    height: 40px;
+    background: #0e47a1;
+    outline: none;
+    color: #ffffff;
+    font-weight: bold;
+    position: relative;
+    left:-5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 7px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.inp_comment {
+    width: 570px;
+    height: 30px;
+    position: absolute;
+    left: 150px;
+    top:658px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.btn_send {
+    width: 100px;
+    height: 40px;
+    position: absolute;
+    right: 150px;
+    top:655px;
+}
+
+.content_comment {
+    width: 600px;
+    position: absolute;
+    left:240px;
+    top:750px;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 25px;
+}
+
+.fa_content_comment {
+    font-size: 50px;
+    position: absolute;
+    top:-15px;
+    left: -70px;
+}
+
+.wrap_debate{
+    width: 700px;
+    background-color: #fdd734;
+    margin: auto;
+    margin-top: 5px;
+    position: relative;
+    top:70px;
+    border: 1px solid #0e47a1;
+}
+
+.wrap_debate_mTitle{
+    width: 600px;
+    height: 40px;
+    background-color: #0e47a1;
+    color: #FFFFFF;
+}
+
+.icon_mTitle_size{
+    width: 40px;
+    height: 40px;
+    background-color: #0e47a1;
+    line-height: 40px;
+    text-align: center;
+    font-size: 30px;
+    display: inline-block;
+}
+
+.mTitle_font_size{
+    text-indent: 10px;
+    font-size: 27px;
+    display: inline-block;
+}
+
+.wrap_debate_sTitle{
+    width: 700px;
+    height: 100px;
+    background-color: #FFFFFF;
+    position: relative;
+    margin-top: 3px;
+}
+
+.stitle_debate_pos{
+    position: absolute;
+}
+
+.img_card_profile {
+    width: 100px;
+    height: 100px;
+    background-color: #d2d2d2;
+    border-radius: 50px;
+}
+
+.text_small_size{
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    background-color: #FFFFFF;
+}
+
+.text_middle_size{
+    width: 110px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    background-color: #FFFFFF;
+}
+
+.text_big_size{
+    width: 130px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    background-color: #FFFFFF;
+}
+
+.text_profile_pos{
+    left: 110px;
+    top: 25px;
+}
+
+.view_debate_pos{
+    left: 220px;
+    top: 25px;
+}
+
+.pos_date_write{
+    top: 25px;
+    left: 340px;
+}
+
+.pos_date_write{
+    top: 25px;
+    left: 340px;
+}
+
+.wrap_debate_contents{
+    width: 700px;
+    height: 300px;
+    background-color: #FFFFFF;
+    text-align: start;
+    font-size: 17px;
+    line-height:1.2em;
+    margin-top: 5px;
+}
+
+.wrap_btn_btn{
+    width: 700px;
+    height: 45px;
+    background-color: #FFFFFF;
+    position: relative;
+    border-top: 1px solid #0e47a1;
+}
+
+.btn_{
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.btn_pos_debate{
+    position: absolute;
+    top: 2.5px;
+    left: 300px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.btn_debate_pos_modified{
+    left: 480px;
+}
+
+.btn_debate_pos_delete{
+    left: 600px;
+}
+
+.profile_nickname {
+    width: 60.5px;
+    position: absolute;
+    left:-5px;
+    top:55px;
+    font-size: 20px;
+}
+
+.btn_small{
+    width: 100px;
+    height: 40px;
+    background-color:#0e47a1;
+    color:#fff;
+    border:none;
+    position:relative;
+    font-size: 17px;
+    cursor:pointer;
+    transition:800ms ease all;
+    outline:none;
+    line-height: 40px;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.btn_small:hover{
+    background:transparent;
+    color:#0e47a1;
+}
+
+.btn_small:before,.btn_small:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: #0e47a1;
+    transition:400ms ease all;
+}
+
+.btn_small:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+}
+
+.btn_small:hover:before,.btn_small:hover:after{
+    width:100%;
+    transition:800ms ease all;
+}
+
+
+
+
+
+
+.btn_small2{
+    width: 100px;
+    height: 40px;
+    background-color:#fdd734;
+    border:none;
+    position:relative;
+    font-size: 17px;
+    cursor:pointer;
+    transition:800ms ease all;
+    outline:none;
+    line-height: 40px;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.btn_small2:hover{
+    background:transparent;
+    color:#0e47a1;
+}
+
+.btn_small2:before,.btn_small2:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: #0e47a1;
+    transition:400ms ease all;
+}
+
+.btn_small2:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+}
+
+.btn_small2:hover:before,.btn_small2:hover:after{
+    width:100%;
+    transition:800ms ease all;
+}
+
+.btn_change {
+    position: absolute;
+    left:600px;
+    top:-10px;
+}
+
+.btn_delete {
+    position: absolute;
+    left:600px;
+    top:35px;
+}

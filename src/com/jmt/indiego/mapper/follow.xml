@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="follow">
+
+	<select id="selectOne" resultType="int" parameterType="Follow">
+		SELECT count(no)
+		FROM follow
+		WHERE user_no=#{userNo} AND follow_no=#{followNo}
+	</select>
+
+	<select id="selectFollow" resultType="int" parameterType="int">
+		SELECT COUNT(no)
+		FROM follow
+		WHERE user_no=#{userNo}
+	</select>
+
+	<select id="selectFollower" resultType="int" parameterType="int">
+		SELECT COUNT(no)
+		FROM follow
+		WHERE follow_no=#{followNo}
+	</select>
+
+	<insert id="insert" parameterType="Follow">
+
+		INSERT INTO follow(no, follow_no, user_no, regdate)
+		VALUES(follow_seq.nextval, #{followNo},#{userNo}, systimestamp)
+
+	</insert>
+	<delete id="delete" parameterType="Follow">
+		DELETE follow
+		WHERE user_no=#{userNo} AND follow_no=#{followNo}
+	</delete>
+
+</mapper>
+

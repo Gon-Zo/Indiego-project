@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="game">
+
+	<select id="selectPopularGameList" resultType="Game">
+		SELECT no ,
+		game_title gameName , image , price , title genre
+		FROM(SELECT g.no ,
+		p.game_title ,g.image , g.price , l.count , ge.title
+		FROM(SELECT
+		contents_no , count(*) count
+		FROM ( SELECT type , contents_no
+		FROM likes
+		WHERE type = 'G')
+		GROUP By contents_no ) l , game g , project p , genre
+		ge
+		WHERE l.contents_no = g.no
+		AND g.no = p.no
+		AND ge.no = p.genre_no
+		order by 5 desc)
+		WHERE rownum BETWEEN 1 AND 5
+	</select>
+
+	<select id="selectBestGameList" resultType="Game">
+		SELECT no , gameName
+		, image , genre , price , regdate , evaluation
+		FROM(SELECT p.no,
+		p.game_title gameName ,g.image , ge.title genre,
+		g.price ,g.regdate ,
+		g.evaluation
+		FROM project p , genre ge , game g
+		WHERE ge.no = p.genre_no
+		AND g.no = p.no
+		order by 7 DESC)
+		WHERE rownum BETWEEN 1 AND 5
+	</select>
+
+
+	<select id="selectTotal" resultType="int">
+		SELECT count(*)
+		FROM game
+	</select>
+
+
+	<select id="selectSearch" resultType="Game"
+		parameterType="String">
+		select no , gameName , image , genre , price , regdate ,
+		evaluation
+		from(SELECT p.no, p.game_title gameName ,g.image , ge.title
+		genre,
+		g.price ,g.regdate regdate , g.evaluation
+		FROM project p , genre
+		ge , game g
+		WHERE ge.no = p.genre_no
+		AND g.no = p.no
+		order by 6 desc)
+		WHERE gameName like #{gameName}
+	</select>
+
+	<select id="selectOne" resultType="Game" parameterType="int">
+		SELECT
+		g.no , p.game_title gameName ,g.image image, g.price ,
+		nvl(l.count,0) ,
+		ge.title genre , g.release_date releaseDate , p.system ,
+		g.evaluation ,
+		u.nick_name , p.title , p.image projectImg , g.contents ,u.user_no
+		userNo
+		FROM(SELECT contents_no , count(*) count
+		FROM ( SELECT type ,
+		contents_no
+		FROM likes
+		WHERE type = 'G')
+		GROUP By contents_no ) l , game
+		g , project p , genre ge , users u
+		WHERE l.contents_no(+) = g.no
+		AND
+		g.no = p.no
+		AND ge.no = p.genre_no
+		and p.user_no = u.user_no
+		AND p.no =
+		#{no}
+	</select>
+
+
+	<select id="selectPageList" resultType="Game"
+		parameterType="PageVO">
+		SELECT no , gameName , image , genre , price , regdate
+		FROM(select no , gameName , image , genre , price , regdate , rownum r
+		from(SELECT p.no, p.game_title gameName ,g.image , ge.title genre,
+		g.price ,g.regdate regdate
+		FROM project p , genre ge , game g
+		WHERE
+		ge.no = p.genre_no
+		AND g.no = p.no
+		order by 6 desc))
+		WHERE r between
+		#{start} and #{end}
+	</select>
+
+
+
+	<select id="selectPopularPageList" resultType="Game"
+		parameterType="PageVO">
+		SELECT no , gameName , image , genre , price , regdate ,
+		evaluation
+		FROM(select no , gameName , image , genre , price , regdate
+		,
+		evaluation ,rownum r
+		from(SELECT p.no, p.game_title gameName ,g.image
+		, ge.title genre, g.price
+		,g.regdate regdate , g.evaluation
+		FROM project
+		p , genre ge , game g
+		WHERE ge.no = p.genre_no
+		AND g.no = p.no
+		order by 7
+		desc))
+		WHERE r between #{start} and #{end}
+	</select>
+
+	<select id="selectDowns" parameterType="int" resultType="int">
+		select
+		downloads
+		from game
+		where no=#{gameNo}
+	</select>
+
+	<select id="selectHeart" parameterType="int" resultType="int">
+		SELECT
+		count(*) count
+		FROM ( SELECT type , contents_no contentsNo
+		FROM likes
+		WHERE type = 'G'
+		and
+		contents_no = #{gameNo} )
+		GROUP By contentsNo
+	</select>
+
+	<insert id="insertGame" parameterType="Game">
+		INSERT INTO
+		game(no,image,price,sale_price,release_date,contents,evaluation,likes,downloads,regdate,file_name)
+		VALUES(game_seq.nextval,#{image},#{price},#{salePrice},#{releaseDate},#{contents},0,0,0,systimestamp,#{fileName})
+	</insert>
+
+	<select id="selectHerartList" parameterType="PageVO"
+		resultType="Game">
+		SELECT image,gameTitle,genre,price
+		FROM(SELECT image,gameTitle,genre,price,rownum r
+		FROM(SELECT g.image image,p.game_title gameTitle,r.title genre,price
+		FROM game g,likes l,project p,genre r
+		WHERE l.contents_no=g.no AND
+		g.no=p.no AND
+		r.no=p.genre_no AND
+		l.type='G' AND l.user_no=#{userNo}))
+		WHERE r BETWEEN #{start} AND #{end}
+	</select>
+
+	<select id="selectHeartCount" parameterType="int"
+		resultType="int">
+		SELECT count(*)
+		FROM game g,likes l
+		WHERE l.contents_no=g.no AND
+		l.type='G' AND l.user_no=#{userNo}
+	</select>
+</mapper>

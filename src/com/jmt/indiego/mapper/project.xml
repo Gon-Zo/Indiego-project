@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="project">
+
+	<update id="updateAttr" parameterType="Project">
+		UPDATE project
+		set title=
+		#{title},
+		game_title= #{gameTitle},
+		start_date= #{startDate},
+		end_date=#{endDate},
+		max_personnel=#{maxPersonnel},
+		visibility=#{visibility},
+		system=#{system},
+		image=#{image},
+		genre_no=#{genreNo},
+		user_no=#{userNo}
+		WHERE no=#{no}
+	</update>
+
+	<update id="updateGameTitle" parameterType="Project">
+		UPDATE project
+		set
+		WHERE no=#{no}
+	</update>
+	<update id="">
+
+	</update>
+
+
+	<select id="selectOne" resultType="Project" parameterType="int">
+		select no,title,game_title gameTitle,start_date startDate,end_date
+		endDate,max_personnel
+		maxPersonnel,visibility,system,image,regdate,genre_no genreNo,user_no
+		userNo
+		FROM project
+		WHERE no = #{no}
+
+	</select>
+
+	<!-- 박정규 -->
+
+	<select id="selectPopularProject" resultType="Project"
+		parameterType="PageVO">
+		select no , title , gameTitle , startDate , endDate , teamcount , maxPersonnel , system , genrename , regdate , nvl(count,0) count, image
+		from(select no , title , gameTitle , startDate , endDate , teamcount ,
+		maxPersonnel , system , genrename , regdate , count , rownum r , image
+		from(
+		select p.no , p.title , p.game_title gameTitle, start_date
+		startDate,
+		end_date endDate, teamcount ,
+		max_personnel maxPersonnel ,
+		visibility , system , p.image , g.title genrename,
+		p.regdate , l.count
+		from (select project_no , count(*) teamcount
+		from team
+		group by
+		project_no)t , project p , genre g , users u,
+		(
+		select contents_no ,
+		count(*) count
+		from likes
+		where type = 'P'
+		group by contents_no
+		) l
+		where
+		t.project_no(+) = p.no
+		and p.genre_no = g.no
+		and u.user_no = p.user_no
+		and
+		l.contents_no(+) = p.no
+		order by count desc
+		))
+		WHERE r between #{start} and
+		#{end}
+	</select>
+
+	<select id="selectHot" resultType="Project">
+		select no , title , gameTitle
+		, startDate , endDate , teamcount ,
+		maxPersonnel , system , genrename ,
+		regdate , count , image
+		from(select no , title , gameTitle , startDate
+		, endDate , teamcount ,
+		maxPersonnel , system , genrename , regdate ,
+		count , rownum r , image
+		from(
+		select p.no , p.title , p.game_title
+		gameTitle, start_date startDate,
+		end_date endDate, teamcount ,
+		max_personnel maxPersonnel , visibility , system , p.image , g.title
+		genrename,
+		p.regdate , l.count
+		from (select project_no , count(*)
+		teamcount
+		from team
+		group by project_no)t , project p , genre g , users
+		u,
+		(
+		select contents_no , count(*) count
+		from likes
+		where type = 'P'
+		group
+		by contents_no
+		) l
+		where t.project_no(+) = p.no
+		and p.genre_no = g.no
+		and
+		u.user_no = p.user_no
+		and l.contents_no(+) = p.no
+		order by count desc
+		))
+		WHERE r between 1 and 5
+	</select>
+
+	<select id="selectProject" resultType="Project"
+		parameterType="PageVO">
+		select no , title , gameTitle
+		, startDate , endDate ,
+		maxPersonnel , system , genrename ,
+		regdate , image
+		from (
+		select no , title , gameTitle , startDate , endDate , teamcount ,
+		maxPersonnel , system , genrename , regdate , rownum r , image
+		From(select p.no , p.title , p.game_title gameTitle, start_date
+		startDate , end_date endDate ,
+		teamcount , max_personnel maxPersonnel,
+		visibility , system , p.image , g.title
+		genrename, p.regdate
+		from (
+		select project_no , count(*) teamcount
+		from
+		team
+		group by project_no)t ,
+		project p , genre g , users u
+		where
+		t.project_no(+) = p.no
+		and p.genre_no =
+		g.no
+		and u.user_no = p.user_no
+		order by regdate desc)
+		)
+		WHERE r between
+		#{start} and #{end}
+	</select>
+
+	<select id="selectTotal" resultType="int">
+		SELECT count(*)
+		FROM project
+	</select>
+
+	<select id="searchList" parameterType="String"
+		resultType="Project">
+		select no , title , gameTitle , startDate , endDate , teamcount ,maxPersonnel , system , genrename , regdate , image
+		From(select p.no , p.title , p.game_title gameTitle, start_date startDate , end_date endDate ,teamcount , max_personnel maxPersonnel,
+		visibility , system , p.image , g.title
+		genrename, p.regdate
+		from (
+		select project_no , count(*) teamcount
+		from
+		team
+		group by project_no)t ,
+		project p , genre g , users u
+		where
+		t.project_no(+) = p.no
+		and p.genre_no =
+		g.no
+		and u.user_no = p.user_no
+		order by regdate desc)
+		where title like
+		#{title}
+	</select>
+
+
+</mapper>
+

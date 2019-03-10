@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="userBadge">
+
+
+<select id="selectMainBadge" 
+resultType="UserBadge"
+parameterType="int">
+SELECT DISTINCT b.main_no mainNo,d.image image
+FROM user_badge b,badge d
+WHERE b.badge_no=d.no AND b.main_no=d.no AND b.user_no=#{userNo}
+</select>
+
+<update id="updateMainBadge" parameterType="UserBadge">
+update user_badge
+set main_no=#{mainNo}
+where user_no=#{userNo}
+</update>
+	
+</mapper>
+

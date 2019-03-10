@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="abchoices">
+
+	<insert id="insert" parameterType="AbChoice">
+		insert into ab_choice(no, choice, regdate, contents_no, user_no)
+		values(ab_choice_seq.nextval, #{choice}, systimestamp, #{contentsNo}, #{userNo})
+	</insert>
+	
+	<select id="selectedChoice" resultType="String" parameterType="AbChoice">
+		select choice
+		from ab_choice
+		where contents_no=#{contentsNo} and user_no=#{userNo}
+	</select>
+	
+	<update id="updateChoice" parameterType="AbChoice">
+		update ab_choice
+		set choice = #{choice}
+		where contents_no=#{contentsNo} and user_no=#{userNo}
+	</update>
+	
+	<select id="selectCountA" parameterType="int" resultType="int">
+		select count(*)
+		from ab_choice
+		where contents_no=#{contentsNo} and choice='A'
+	</select>
+	
+	<select id="selectCountB" parameterType="int" resultType="int">
+		select count(*)
+		from ab_choice
+		where contents_no=#{contentsNo} and choice='B'
+	</select>
+	
+</mapper>
+

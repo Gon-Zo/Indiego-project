@@ -1,0 +1,369 @@
+body {
+    font-weight: bold;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+	#loginBodyMask {
+	z-index:4;
+	position: absolute;
+	background-color: #000;
+	left: 0;
+	top: 0;
+	display: none;
+}
+
+.login_background_window {
+	z-index:5;
+	position: absolute;
+	left: 100px;
+	top: 100px;
+	display: none;
+}
+
+#loginWrap {
+    width: 392px;
+    height: 392px;
+    position: fixed;
+    top:50%;
+    left:50%;
+    margin: -196px 0 0 -196px;
+    background:  #FFFFFF;
+    border:4px solid #0e47a1;
+    z-index: 5;
+
+}
+
+.img_logo {
+    width:150px;
+    height:150px;
+    position: relative;
+    top:30px;
+    left:121px;
+
+}
+
+.inp_id {
+    width: 200px;
+    height: 20px;
+    position: relative;
+    left:-24px;
+    font-weight: bold;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.inp_pwd {
+    width: 200px;
+    height: 20px;
+    position: relative;
+    left:-24px;
+    font-weight: bold;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.content {
+    position: relative;
+    top:50px;
+    left:113px;
+    margin-right: 140px;
+    line-height: 50px;
+
+}
+
+.btn_login {
+    width: 120px;
+    height: 40px;
+    position: relative;
+    left:35px;
+
+}
+
+
+.content_menu {
+    position: relative;
+    top:60px;
+    left:50px;
+    cursor: pointer;
+
+}
+
+.content_menu2 {
+    position: relative;
+    left:155px;
+    top:45px;
+    cursor: pointer;
+}
+
+.content_menu3 {
+    position: relative;
+    left:275px;
+    top:29px;
+    cursor: pointer;
+}
+
+#idPwdWrap{
+    width: 540px;
+    height: 350px;
+    position: fixed;
+    left:50%;
+    top:50%;
+    margin: -175px 0 0 -270px;
+    display: none;
+}
+
+.tabs{
+    margin: 0;
+    padding: 0;
+}
+
+.find{
+    display: inline-block;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.tab_content{
+    display: none;
+    background: #FFFFFF;
+    padding: 15px;
+}
+
+.tab_content.current{
+    width: 510px;
+    height:275px;
+    display: inherit;
+    background: #FFFFFF;
+    border: 5px solid #0e47a1;
+}
+
+.tab_content.current2{
+    width: 510px;
+    height:275px;
+    display: inherit;
+    background: #FFFFFF;
+    border: 5px solid #0e47a1;
+}
+
+.content_form {
+    text-align: center;
+    line-height: 90px;
+}
+
+.inp_nickname {
+    width: 505px;
+    height: 40px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: bold;
+}
+
+.inp_mail {
+    width: 159px;
+    height: 40px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: bold;
+}
+
+.inp_mail2 {
+    width: 160px;
+    height: 40px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: bold;
+}
+
+.select_mail {
+    width: 150px;
+    height: 40px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: bold;
+}
+
+.btn_mail {
+    width: 160px;
+    height: 40px;
+    margin-left: 150px;
+}
+
+.content_form2 {
+    text-align: center;
+    line-height: 70px;
+}
+
+.inp_id2 {
+    width: 505px;
+    height: 40px;
+    font-weight: bold;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.inp_nickname2 {
+    width: 505px;
+    height: 40px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: bold;
+}
+
+.inp_mail3 {
+    width: 159px;
+    height: 40px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: bold;
+}
+
+.inp_mail4 {
+    width: 160px;
+    height: 40px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: bold;
+}
+
+.select_mail2 {
+    width: 150px;
+    height: 40px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: bold;
+}
+
+.find {
+    width: 120px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+}
+
+.tab_content {
+    display: none;
+}
+
+.btn_big{
+    width: 120px;
+    height: 40px;
+    background-color:#0e47a1;
+    color:#fff;
+    border:none;
+    position:relative;
+    font-size: 17px;
+    cursor:pointer;
+    transition:800ms ease all;
+    outline:none;
+    line-height: 40px;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.btn_big:hover{
+    background:transparent;
+    color:#0e47a1;
+}
+
+.btn_big:before,.btn_big:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: #0e47a1;
+    transition:400ms ease all;
+}
+
+.btn_big:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+}
+
+.btn_big:hover:before,.btn_big:hover:after{
+    width:100%;
+    transition:800ms ease all;
+}
+
+.btn_small1{
+    width: 200px;
+    height: 40px;
+    background-color:#0e47a1;
+    color:#fff;
+    border:none;
+    position:relative;
+    font-size: 17px;
+    cursor:pointer;
+    transition:800ms ease all;
+    outline:none;
+    line-height: 40px;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.btn_small1:hover{
+    background:transparent;
+    color:#0e47a1;
+}
+
+.btn_small1:before,.btn_small1:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: #0e47a1;
+    transition:400ms ease all;
+}
+
+.btn_small1:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+}
+
+.btn_small1:hover:before,.btn_small1:hover:after{
+    width:100%;
+    transition:800ms ease all;
+}
+
+.btn_small{
+    width: 100px;
+    height: 40px;
+    background-color:#0e47a1;
+    color:#fff;
+    border:none;
+    position:relative;
+    font-size: 17px;
+    cursor:pointer;
+    transition:800ms ease all;
+    outline:none;
+    line-height: 40px;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.btn_small:hover{
+    background:transparent;
+    color:#0e47a1;
+}
+
+.btn_small:before,.btn_small:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: #0e47a1;
+    transition:400ms ease all;
+}
+
+.btn_small:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+}
+
+.btn_small:hover:before,.btn_small:hover:after{
+    width:100%;
+    transition:800ms ease all;
+}

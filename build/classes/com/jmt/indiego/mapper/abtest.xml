@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="abtest">
+
+	<select id="selectBsetList" resultType="ABTest">
+		select no, title , nickname , term , nickname
+		from(select ab.no , ab.title ,
+		term , u.nick_name nickname , rownum r
+		from ab_test
+		ab , users u
+		where ab.user_no =
+		u.user_no
+		order by term asc)
+		where r between 1 and 10
+	</select>
+
+
+	<insert id="insert" parameterType="AbTest">
+		<selectKey order="BEFORE" keyProperty="no" resultType="int">
+			SELECT ab_test_seq.nextval
+			FROM dual
+		</selectKey>
+		insert into ab_test(no, title, term, contents_a, contents_b, image_a,
+		image_b, user_no, regdate)
+		values(#{no}, #{title}, #{term},
+		#{contentsA}, #{contentsB}, #{imageA}, #{imageB}, #{userNo},
+		systimestamp)
+	</insert>
+
+	<select id="selectList" resultType="AbTest"
+		parameterType="PageVO">
+		SELECT no, r, voteNum, title, term, contentsA,
+		contentsB, imageA, imageB, userNo, regdate
+		FROM(
+		SELECT no, rownum r, voteNum, title, term, contentsA, contentsB, imageA,
+		imageB, userNo, regdate
+		FROM (
+		SELECT abt.no no, voteNum, abt.title title, term, contents_a contentsA,
+		contents_b contentsB, image_a imageA, image_b imageB,
+		user_no userNo, abt.regdate regdate
+		FROM ab_test abt,
+		(SELECT contents_no contentsNo, count(*) voteNum
+		FROM ab_choice
+		GROUP BY contents_no) abc
+		WHERE no=abc.contentsNo(+)
+		ORDER BY term desc
+		)
+		)
+		WHERE r BETWEEN #{start} AND #{end}
+		ORDER BY r
+	</select>
+
+	<select id="selectOne" resultType="AbTest">
+		select no, rownum r, title,
+		term, contentsA, contentsB, imageA, imageB,
+		userNo, regdate
+		from(select
+		no, title, term, contents_a contentsA,
+		contents_b contentsB, image_a imageA, image_b imageB,
+		user_no userNo, regdate
+		from ab_test
+		order by no desc)
+		where rownum between 1 and 10 and no=#{no}
+	</select>
+
+	<select id="selectTotal" resultType="int">
+		select count(*)
+		from ab_test
+	</select>
+
+	<select id="selectFinished" parameterType="int" resultType="int">
+		select count(*)
+		from ab_test
+		where no=#{no} and term &lt;= systimestamp
+	</select>
+
+	<select id="selectOnGoing" resultType="AbTest">
+		select title,
+		voteNum, contentsNo no
+		from ab_test abt, (SELECT contents_no
+		contentsNo, count(*) voteNum
+		FROM ab_choice
+		GROUP BY contents_no) abc
+		where abc.contentsNo(+)=abt.no and term &gt;=
+		systimestamp
+		and rownum between 1 and 5
+		ORDER BY abt.regdate
+	</select>
+
+	<select id="selectNearClosing" resultType="AbTest">
+		select title,
+		term, no
+		from ab_test abt
+		where term > systimestamp and rownum between 1
+		and 5
+		ORDER BY term
+	</select>
+
+	<select id="selectMyAbTest" parameterType="int"
+		resultType="AbTest">
+		select title, voteNum, contentsNo no
+		from ab_test abt,
+		(SELECT contents_no contentsNo, count(*) voteNum
+		FROM ab_choice
+		GROUP BY contents_no) abc
+		where abc.contentsNo(+)=abt.no and
+		user_no=#{userNo} and rownum between 1 and 2
+	</select>
+
+	<select id="selectIVoed" parameterType="int" resultType="AbTest">
+		SELECT
+		userNo, contentsNo no, voteNum, title
+		FROM (SELECT abc1.user_no userNo,
+		contents_no contentsNo, voteNum
+		FROM ab_choice abc1, (SELECT
+		contents_no contentsNo, count(*) voteNum
+		FROM ab_choice
+		GROUP BY contents_no) abc2
+		WHERE abc1.contents_no=abc2.contentsNo and
+		user_no=#{userNo}) abc, ab_test abt
+		WHERE contentsNo=abt.no and rownum
+		between 1 and 2
+	</select>
+
+</mapper>
+

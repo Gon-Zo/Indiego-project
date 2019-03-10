@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="parentStep">
+
+<select id="selectList" resultType="ParentStep" parameterType="int">
+SELECT p.no,p.project_no projectNo,p.title title,p.sequence,p.step_no stepNo,p.start_date startDate,p.end_date endDate,contents,file_name filename
+FROM parent_step p ,step s
+WHERE s.no = p.step_no
+and p.project_no = #{projectNo}
+
+</select>
+
+<insert id="insertParentStep" parameterType="ParentStep">
+insert into parent_step(no,project_no,title,regdate)
+values (parent_step_seq.nextval,#{projectNo},#{title},systimestamp)
+</insert>
+	
+</mapper>
+

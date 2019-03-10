@@ -1,0 +1,526 @@
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: bold;
+}
+
+#wrap {
+    width: 1000px;
+    min-height: 2000px;
+    margin: auto;
+    border: 1px solid #0e47a1;
+    position: relative;
+}
+
+.title {
+    width: 800px;
+    font-size: 30px;
+    font-weight: bold;
+    border-bottom: 10px solid #fdd734;
+    position: absolute;
+    top:20px;
+}
+
+.wrap_content {
+    width: 907px;
+    height: 685px;
+    border: 2px solid #0e47a1;
+    position: absolute;
+    left:45px;
+    top:95px;
+}
+
+.content {
+    width: 900px;
+    height: 150px;
+    position: relative;
+    left:50px;
+    top:100px;
+    border-bottom: 1px solid #0e47a1;
+}
+
+.content_title {
+    position: absolute;
+    left:50px;
+    top:35px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.content_writer {
+    position: absolute;
+    left:120px;
+    top:85px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.fa_profile0 {
+    font-size: 50px;
+    position: absolute;
+    left:50px;
+    top:70px;
+}
+
+.content_nickname {
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    left:210px;
+    top:85px;
+}
+
+.content_batge {
+    width: 30px;
+    height: 30px;
+    background: #d2d2d2;
+    position: absolute;
+    left:280px;
+    top:81px;
+}
+
+.content_view_num {
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    left:370px;
+    top:85px;
+}
+
+.content_write_time {
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    left: 510px;
+    top:85px;
+}
+
+.fa_bookmark {
+    font-size: 50px;
+    position: absolute;
+    right: 30px;
+    top:70px;
+    cursor: pointer;
+}
+
+.fa_bookmark2 {
+    font-size: 50px;
+    position: absolute;
+    right: 30px;
+    top:70px;
+    display: none;
+    cursor: pointer;
+}
+
+.content_detail {
+    width: 900px;
+    height: 480px;
+    position: relative;
+    left: 50px;
+    top:150px;
+}
+
+.content_detail_box {
+    width: 900px;
+    height: 490px;
+    position: absolute;
+    left:0;
+    top:-45px;
+    border-top: 1px solid #0e47a1;
+    padding-top: 30px;
+    text-indent: 30px;
+}
+
+.btn_like {
+    width: 100px;
+    height: 40px;
+    position: absolute;
+    left:300px;
+    top:435px;
+}
+
+.btn_report {
+    width: 100px;
+    height: 40px;
+    position: absolute;
+    right:320px;
+    top:435px;
+}
+
+.btn_change0 {
+    width: 100px;
+    height: 500px;
+    position: absolute;
+    left:750px;
+    top:790px;
+}
+
+.btn_delete0 {
+    width: 100px;
+    height: 40px;
+    position: absolute;
+    left:855px;
+    top:790px;
+}
+
+.list_content {
+    font-weight: bold;
+    position: absolute;
+    left:110px;
+    top:50px;
+}
+
+.form_leave {
+    width: 800px;
+    height: 200px;
+    position: absolute;
+    left:100px;
+    top:80px;
+    border: 2px solid #0e47a1;
+}
+
+.inp_content {
+    width: 600px;
+    height: 130px;
+    position: absolute;
+    left:30px;
+    top:40px;
+    resize: none;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: bold;
+}
+
+.btn_registration {
+    width: 100px;
+    height: 40px;
+    position: absolute;
+    left: 670px;
+    top:40px;
+}
+
+.list_content2 {
+    font-weight: bold;
+    position: absolute;
+    left:110px;
+    top:300px;
+}
+
+.form_leave2 {
+    width: 800px;
+    height: 800px;
+    position: absolute;
+    left:100px;
+    top:330px;
+    border: 2px solid #0e47a1;
+}
+
+.list_content3 {
+    width: 510px;
+    height: 130px;
+    position: absolute;
+    left:120px;
+    top:40px;
+    border: 1px solid #0e47a1;
+}
+
+.btn_change {
+    width: 50px;
+    height: 40px;
+    position: absolute;
+    left: 670px;
+    top:90px;
+}
+
+.btn_delete {
+    width: 50px;
+    height: 40px;
+    position: absolute;
+    left: 670px;
+    top:133px;
+}
+
+.btn_registration2 {
+    width: 100px;
+    height: 40px;
+    position: absolute;
+    left: 670px;
+    top:40px;
+}
+
+.fa_profile {
+    width: 50px;
+    height: 50px;
+    font-size: 50px;
+    position: absolute;
+    left:35px;
+    top:60px;
+}
+
+.list_nick {
+    position: absolute;
+    left:35px;
+    top:140px;
+    font-weight: bold;
+}
+
+.inp_content4 {
+    width: 470px;
+    height: 130px;
+    position: absolute;
+    left:160px;
+    top:220px;
+    resize: none;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: bold;
+}
+
+.btn_change2 {
+    width: 50px;
+    height: 40px;
+    position: absolute;
+    left: 670px;
+    top:270px;
+}
+
+.btn_delete2 {
+    width: 50px;
+    height: 40px;
+    position: absolute;
+    left: 670px;
+    top:313px;
+}
+
+.btn_registration3 {
+    width: 100px;
+    height: 40px;
+    position: absolute;
+    left: 670px;
+    top:220px;
+}
+
+.fa_profile2 {
+    width: 50px;
+    height: 50px;
+    font-size: 50px;
+    position: absolute;
+    left:80px;
+    top:240px;
+}
+
+.list_nick2 {
+    position: absolute;
+    left:80px;
+    top:320px;
+    font-weight: bold;
+}
+
+.list_content5 {
+    width: 475px;
+    height: 135px;
+    position: absolute;
+    left:160px;
+    top:420px;
+    border: 1px solid #0e47a1;
+}
+
+.btn_change3 {
+    width: 50px;
+    height: 40px;
+    position: absolute;
+    left: 670px;
+    top:470px;
+}
+
+.btn_delete3 {
+    width: 50px;
+    height: 40px;
+    position: absolute;
+    left: 670px;
+    top:513px;
+}
+
+.btn_registration4 {
+    width: 100px;
+    height: 40px;
+    position: absolute;
+    left: 670px;
+    top:420px;
+}
+
+.fa_profile3 {
+    width: 50px;
+    height: 50px;
+    font-size: 50px;
+    position: absolute;
+    left:80px;
+    top:440px;
+}
+
+.list_nick3 {
+    position: absolute;
+    left:80px;
+    top:520px;
+    font-weight: bold;
+}
+
+#paging {
+    position: absolute;
+    left:330px;
+    top:700px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.write_none1 {
+    display: none;
+}
+
+.write_none2 {
+    display: none;
+}
+
+.write_none3 {
+    width: 1000px;
+    display: none;
+    position: absolute;
+    top:-200px;
+}
+
+.list_content_wrap {
+    width: 1000px;
+    height: 1200px;
+    position: absolute;
+    top:850px;
+}
+
+.btn_big{
+    width: 150px;
+    height: 40px;
+    background-color:#0e47a1;
+    color:#fff;
+    border:none;
+    position:relative;
+    font-size: 20px;
+    cursor:pointer;
+    transition:800ms ease all;
+    outline:none;
+    line-height: 40px;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.btn_big:hover{
+    background:transparent;
+    color:#0e47a1;
+}
+
+.btn_big:before,.btn_big:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: #0e47a1;
+    transition:400ms ease all;
+}
+
+.btn_big:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+}
+
+.btn_big:hover:before,.btn_big:hover:after{
+    width:100%;
+    transition:800ms ease all;
+}
+
+.btn_small{
+    width: 100px;
+    height: 40px;
+    background-color:#0e47a1;
+    color:#fff;
+    border:none;
+    position:relative;
+    font-size: 17px;
+    cursor:pointer;
+    transition:800ms ease all;
+    outline:none;
+    line-height: 40px;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.btn_small:hover{
+    background:transparent;
+    color:#0e47a1;
+}
+
+.btn_small:before,.btn_small:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: #0e47a1;
+    transition:400ms ease all;
+}
+
+.btn_small:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+}
+
+.btn_small:hover:before,.btn_small:hover:after{
+    width:100%;
+    transition:800ms ease all;
+}
+
+.btn_small2{
+    width: 100px;
+    height: 40px;
+    background-color:#fdd734;
+    border:none;
+    position:relative;
+    font-size: 20px;
+    cursor:pointer;
+    transition:800ms ease all;
+    outline:none;
+    line-height: 40px;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.btn_small2:hover{
+    background:transparent;
+    color:#0e47a1;
+}
+
+.btn_small2:before,.btn_small2:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: #0e47a1;
+    transition:400ms ease all;
+}
+
+.btn_small2:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+}
+
+.btn_small2:hover:before,.btn_small2:hover:after{
+    width:100%;
+    transition:800ms ease all;
+}

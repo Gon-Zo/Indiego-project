@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="projectcheck">
+
+	<select id="selectList" resultType="Projectcheck"
+		parameterType="int">
+		SELECT c.no,c.user_no userNo,c.parent_step_no
+		parentStepNo,p.title,c.content,c.project_no projectNo
+		FROM parent_step p,project_check c
+		WHERE p.no = c.parent_step_no
+		and c.project_no =#{projectNo}
+
+	</select>
+
+</mapper>
+

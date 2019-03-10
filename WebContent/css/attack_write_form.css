@@ -1,0 +1,114 @@
+body {
+    font-weight: bold;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+#wrap {
+    width: 1000px;
+    height: 870px;
+    margin: auto;
+    position: relative;
+    border: 2px solid #0e47a1;
+    background: #FFFFFF;
+}
+
+.box_image_title {
+    background: #0e47a1;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    left:50px;
+    top:50px;
+}
+
+.fa_search {
+    font-size: 30px;
+    position: absolute;
+    left:220px;
+    top:55px;
+    cursor: pointer;
+}
+
+.title {
+    width: 70px;
+    height: 35px;
+    background: #FFFFFF;
+    position: absolute;
+    top:50px;
+    left:300px;
+    text-align: center;
+    line-height: 35px;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+
+.inp_title {
+    width: 500px;
+    height: 29px;
+    position: absolute;
+    left:70px;
+    font-weight: bold;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.content {
+    font-size: 30px;
+    font-weight: bold;
+    position: relative;
+    left:150px;
+    top:400px;
+}
+
+.btn_small_wrap {
+    position: absolute;
+    left:830px;
+    top:760px;
+}
+
+.btn_small2{
+    width: 100px;
+    height: 40px;
+    background-color:#fdd734;
+    border:none;
+    position:relative;
+    font-size: 20px;
+    cursor:pointer;
+    transition:800ms ease all;
+    outline:none;
+    line-height: 40px;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.btn_small2:hover{
+    background:transparent;
+    color:#0e47a1;
+}
+.btn_small2:before,.btn_small2:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: #0e47a1;
+    transition:400ms ease all;
+}
+.btn_small2:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+}
+.btn_small2:hover:before,.btn_small2:hover:after{
+    width:100%;
+    transition:800ms ease all;
+}
+
+#editSection {
+    width:700px;
+    position: absolute;
+    right:70px;
+    top:150px;
+}

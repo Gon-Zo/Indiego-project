@@ -1,0 +1,981 @@
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+
+}
+
+.contents{
+    width: 1000px;
+    height:1800px;
+    position: relative;
+    margin:auto;
+}
+.btn_none{
+	display:none;
+}
+.box_profile_title {
+    width: 1000px;
+    height: 250px;
+    /*background-color: #00bb00;*/
+    /*margin: auto;*/
+    position: relative;
+    margin:auto;
+}
+.box_profile_con.on{
+	background-color:white;
+}
+
+#profileCanvas {
+    background-image: url("../img/profile/defaultImg.png");
+    background-size: 100% 100%;
+    top: 20px;
+    width: 150px;
+    height: 150px;
+    border-radius: 75px;
+    position: absolute;
+    left: 40px;
+}
+
+#profileNameBox {
+    width: 300px;
+    height: 100px;
+    font-size: 30px;
+
+    /*background-color: #5BD974;*/
+    position: absolute;
+    left: 250px;
+    top: 10px;
+    line-height: 100px;
+}
+
+.img_profile_image {
+    width: 50px;
+    height: 50px;
+}
+
+div.btn {
+    /*position: absolute;*/
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+
+    line-height: 40px;
+}
+
+.btn_profile_edit {
+ border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    position: absolute;
+    left: 180px;
+    top: 140px;
+    width: 25px;
+    height: 25px;
+    font-size: 20px;
+    line-height: 25px;
+    background-color:rgb(253, 215, 52);
+}
+#profileInput{
+    position: absolute;
+    left: 180px;
+    top: 140px;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.box_follow{
+    /*position: absolute;*/
+    font-size: 16px;
+    text-align: center;
+
+}
+
+#followerBox {
+    left: 250px;
+}
+
+
+.box_follow_two{
+    width: 150px;
+    position: absolute;
+    top: 130px;
+}
+#followingBox {
+    left: 400px;
+}
+
+.btn.btn_follow {
+    position: absolute;
+    top: 200px;
+    left: 340px;
+    width: 120px;
+    height: 40px;
+    background-color: rgb(253, 215, 52);
+    /*color: white;*/
+    font-size: 16px;
+    border:none;
+    border-radius: 5px;
+	cursor: pointer;
+}
+
+.btn_config {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 40px;
+    color: rgba(126,126,126,0.85);
+    cursor: pointer;
+}
+
+.btn_creator_home{
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 40px;
+    position: absolute;
+    width: 120px;
+    height: 40px;
+    right: 25px;
+    top: 20px;
+    cursor: pointer;
+    background-color: rgb(253, 215, 52);
+    /*color: white;*/
+    font-size: 15px;
+}
+
+.tap {
+    display: inline-block;
+    width: 120px;
+    height: 40px;
+    background-color: white;
+    cursor: pointer;
+    text-align: center;
+}
+
+.tap.on_profile {
+    background-color: #0e47a1;
+    color: white;
+}
+
+.box_tap {
+    position: absolute;
+    width: 1000px;
+    height: 40px;
+    line-height: 40px;
+}
+
+.box_profile_con {
+    position: absolute;
+    top: 40px;
+    width: 1000px;
+    min-height: 700px;
+}
+
+.box_badge {
+    width: 1000px;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    transition: .5s ease;
+}
+
+.badge {
+    width: 125px;
+    height: 100px;
+
+    position: relative;
+    display: inline-block;
+}
+.on_badge .check_icon{
+    display: block;
+    color: rgb(253, 215, 52);
+    visibility: visible;
+}
+
+
+.list_badge li {
+    position: relative;
+    line-height: 20px;
+    float: left;
+    font-size: 13px;
+}
+
+.badge_img {
+    position: absolute;
+    left: 33px;
+    top: 10px;
+}
+
+.check_icon{
+    width: 50px;
+    height: 50px;
+    font-size: 35px;
+    line-height: 30px;
+    text-align: center;
+    position: absolute;
+    left: 33px;
+    top:25px;
+
+   visibility: hidden;
+}
+
+.badge_title {
+    /*3餓ο옙 占쎌깈甕곤옙*/
+    position: absolute;
+    /*display: inline-block;*/
+    /*border-bottom: 2px dotted Sienna;*/
+    left: 33px;
+    top: 60px;
+    width: 50px;
+    height: 30px;
+
+    /*overflow: hidden;*/
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+}
+.badge_text{
+    visibility: hidden;
+    width: 200px;
+    min-height: 60px;
+    background-color: #5f5f5f;
+    color: white;
+    text-align: center;
+    border-radius: 3px;
+    padding: 10px 5px;
+    position: absolute;
+    z-index: 1;
+    top:60px;
+    left:10px;
+    opacity: 0.8;
+}
+.badge:hover .badge_text{
+    visibility: visible;
+}
+
+.btn_show {
+    width: 60px;
+    height: 30px;
+    font-size: 30px;
+    line-height: 20px;
+    border: none;
+    position: absolute;
+    left: 470px;
+    text-align: center;
+    bottom: 0px;
+}
+
+.paging{
+    width: 1000px;
+    height: 50px;
+
+}
+.box_heart_list{
+    width: 1000px;
+    min-height: 300px;
+    /*background-color: palevioletred;*/
+    /*border: 1px solid #424242;*/
+    border-bottom: 2px solid #a3b0bf;
+}
+.list_heart{
+    width: 1000px;
+    height: 220px;
+    /*background-color: palegoldenrod;*/
+}
+.box_buy_list{
+    width: 1000px;
+    min-height: 300px;
+    /*background-color: palevioletred;*/
+    /*border: 1px solid #424242;*/
+
+    border-bottom: 2px solid #a3b0bf;
+}
+.list_buy{
+    width: 1000px;
+    height: 220px;
+    /*background-color: palegoldenrod;*/
+    position: absolute;
+}
+.btn_lock{
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    position: absolute;
+    right: 5px;
+    cursor: pointer;
+}
+.slide_bar{
+    width: 1000px;
+    height: 10px;
+    background-color: rgb(14, 71, 161);
+}
+.title_category{
+    width: 1000px;
+    height: 50px;
+    font-size: 20px;
+    text-indent: 30px;
+    line-height: 50px;
+    color: rgb(14, 71, 161);
+
+}
+.title_stick{
+    width: 1000px;
+    height: 2px;
+    background-color: rgb(14, 71, 161);
+    margin-bottom: 10px;
+}
+.box_content{
+    width: 1000px;
+    position: relative;
+}
+.box_card{
+    float: left;
+}
+
+div.box_attack{
+    height: 415px;
+    overflow:hidden;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.list_debate{
+    width: 850px;
+    padding-left: 75px;
+    padding-right: 75px;
+}
+
+.review{
+    margin-left: 50px;
+    width: 400px;
+    height: 200px;
+    border: 2px solid rgba(228, 228, 228, 0.3);
+    background-color: rgba(228, 228, 228, 0.3);
+    display: inline-block;
+    padding-top: 10px;
+    padding-left: 10px;
+    /*position: absolute;*/
+    position: relative;
+}
+.box_review_in{
+    display: inline-block;
+    height: 180px;
+
+}
+#reviewGame{
+    width: 140px;
+    font-size: 18px;
+    line-height: 50px;
+    text-align: center;
+}
+div#reviewContent{
+    padding: 5px;
+    position: absolute;
+    width: 240px;
+    font-size: 15px;
+    /*background-color: #0e47a1;*/
+}
+/*.box_discussion{*/
+.box_debate_content{
+    width: 1000px;
+    height: 200px;
+    background-color: rgba(228, 228, 228, 0.3);
+    padding-top: 20px;
+
+}
+.box_commuity_content{
+    width: 900px;
+    height: 200px;
+    background-color: rgba(228, 228, 228, 0.3);
+    padding-top: 20px;
+    padding-left: 100px;
+}
+#recommend{
+    font-size: 20px;
+}
+
+.list_content div {
+    display: inline-block;
+}
+
+.board {
+    width: 200px;
+    height: 30px;
+}
+
+.title_board {
+    width: 270px;
+    height: 30px;
+
+}
+
+.time_board {
+    width: 150px;
+    height: 30px;
+    text-align: center;
+}
+
+.hits_board {
+    width: 70px;
+    height: 30px;
+    text-align: center;
+}
+
+.like_board {
+    width: 80px;
+    height: 30px;
+    text-align: center;
+}
+
+
+
+.board_writing {
+    width: 800px;
+    height: 30px;
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.list_one {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.board_writing{
+    border-bottom: 1px solid rgba(228, 228, 228, 0.9);
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+li>.title_board{
+    cursor: pointer;
+}
+
+.box_line {
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    position: absolute;
+}
+
+.icon_debate_size {
+    width: 30px;
+
+}
+
+
+.box_list_debate {
+    width: 850px;
+    height: 28px;
+    margin-top: 3px;
+    cursor: pointer;
+    position: relative;
+    border-bottom: 2px solid silver;
+}
+.box_list_debate:hover{
+    background-color: #a7a7a7;
+}
+.mTItle_debate_size {
+    width: 400px;
+    left: 35px;
+}
+
+.writer_debate_size {
+    width: 100px;
+    font-size: 11px;
+    left: 438px;
+}
+.hidden_text{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.writer_debateDate_size {
+    width: 100px;
+    font-size: 9px;
+    left: 540px;
+}
+
+.comment_size {
+    width: 80px;
+    left: 645px;
+
+}
+.icon_comment_size{
+    width: 55px;
+    height: 30px;
+    font-size: 20px;
+    text-align: center;
+    line-height: 30px;
+    position: absolute;
+    left: 730px;
+}
+.pos_comment_down{
+    left: 790px;
+}
+
+.box_attack_writing {
+    position: relative;
+    width: 1000px;
+    height: 150px;
+    /*background-color: palegoldenrod;*/
+    /*margin: 30px;*/
+    text-align: center;
+    line-height: 150px;
+    /*overflow: hidden;*/
+    border-top: 2px solid rgba(228, 228, 228, 0.6);
+    padding-top: 3px;
+    background-color: rgba(228, 228, 228, 0.3);
+}
+
+.box_attack_writing > div {
+    position: absolute;
+}
+
+.box_game_attack {
+
+    width: 150px;
+    height: 150px;
+
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*text-align: center;*/
+    /*overflow: hidden;*/
+    /*font-size: 20px;*/
+
+}
+
+.title_game {
+    position: absolute;
+    width: 150px;
+    height: 50px;
+    line-height: 50px;
+    top: 100px;
+
+    /*background-color: #125de6;*/
+}
+
+.box_title_attack {
+    width: 500px;
+    height: 150px;
+    left: 150px;
+
+}
+
+.title_attack {
+    width: 500px;
+    height: 100px;
+    line-height: 100px;
+    font-size: 25px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.time_attack {
+    /*display: inline-block;*/
+    width: 300px;
+    height: 50px;
+    line-height: 50px;
+}
+
+.writer_attack {
+    /*display: inline-block;*/
+    width: 180px;
+    height: 50px;
+    margin-top: -50px;
+    margin-left: 300px;
+    line-height: 50px;
+}
+
+.list_explan {
+    background-color: rgba(228, 228, 228, 0.3);
+    position: relative;
+    width: 1000px;
+    height: 40px;
+    line-height: 40px;
+    text-indent: 20px;
+}
+
+.list_explan div {
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    width: 110px;
+    position: absolute;
+}
+
+.explan_com {
+    right: 220px;
+}
+
+.explan_like {
+    right: 0;
+}
+
+.explan_view {
+    right: 110px;
+}
+
+.box_num_attack {
+    width: 340px;
+    height: 148px;
+    left: 650px;
+    overflow:hidden;
+}
+
+.box_num_attack div {
+    display: inline-block;
+    height: 150px;
+    line-height: 150px;
+    width: 105px;
+
+}
+.box_card{
+    width: 195px;
+    height: 220px;
+    position: relative;
+    display: inline-block;
+    margin-left: 4px;
+    background-color: rgba(250 , 250 , 250 , 1);
+    cursor:pointer;
+    text-indent: 3px;
+    top: 10px;
+    margin-top: 5px;
+}
+
+.box_card:hover{
+    background-color: #a7a7a7;
+}
+
+
+.img_thumbnail_game , .text_name  {
+    width: 150px;
+    position: absolute;
+    left: 22.5px;
+
+}
+.img_thumbnail_game{
+    height: 150px;
+    background-color: #000;
+    top: 10px;
+    /*      transition: 1s ease;*/
+    object-fit: cover;
+}
+.text_name , .text_genre , .text_price{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.text_name{
+    height: 30px;
+    top: 160px;
+    line-height: 30px;
+    text-align: start;
+}
+.text_genre , .text_price{
+    width: 75px;
+    height: 20px;
+    position: absolute;
+    top: 190px;
+}
+.text_genre{
+    left: 22.5px;
+}
+.text_price{
+    left: 97.5px;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: bold;
+}
+
+#guestBookBox {
+    width: 1000px;
+    height: 1200px;
+    margin: auto;
+    position: relative;
+    border: 1px solid #0e47a1;
+}
+
+.title_guestbook {
+    font-weight: bold;
+    position: absolute;
+    left:110px;
+    top:50px;
+}
+
+.form_leave {
+    width: 800px;
+    height: 200px;
+    position: absolute;
+    left:100px;
+    top:80px;
+    border: 1px solid #0e47a1;
+}
+
+.lab_nondisclosure {
+    position: absolute;
+    left:30px;
+    top:10px;
+    font-weight: bold;
+}
+
+.inp_content {
+    width: 600px;
+    height: 130px;
+    position: absolute;
+    left:30px;
+    top:40px;
+    resize: none;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: bold;
+}
+
+.btn_registration {
+    width: 100px;
+    height: 40px;
+    position: absolute;
+    left: 670px;
+    top:40px;
+}
+
+.list_content2 {
+    font-weight: bold;
+    position: absolute;
+    left:110px;
+    top:300px;
+}
+
+.form_leave2 {
+    width: 800px;
+    height: 800px;
+    position: absolute;
+    left:100px;
+    top:330px;
+    border: 1px solid #0e47a1;
+}
+
+.list_content3 {
+    width: 510px;
+    height: 130px;
+    position: absolute;
+    left:120px;
+    top:40px;
+    border: 1px solid #0e47a1;
+}
+
+.btn_change {
+    width: 50px;
+    height: 40px;
+    position: absolute;
+    left: 670px;
+    top:90px;
+}
+
+.btn_delete {
+    width: 50px;
+    height: 40px;
+    position: absolute;
+    left: 670px;
+    top:133px;
+}
+
+.btn_registration2 {
+    width: 100px;
+    height: 40px;
+    position: absolute;
+    left: 670px;
+    top:40px;
+}
+
+.fa_profile {
+    width: 50px;
+    height: 50px;
+    font-size: 50px;
+    position: absolute;
+    left:35px;
+    top:60px;
+}
+
+.list_nick {
+    position: absolute;
+    left:35px;
+    top:140px;
+    font-weight: bold;
+}
+
+.inp_content4 {
+    width: 470px;
+    height: 130px;
+    position: absolute;
+    left:160px;
+    top:220px;
+    resize: none;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: bold;
+}
+
+.btn_change2 {
+    width: 50px;
+    height: 40px;
+    position: absolute;
+    left: 670px;
+    top:270px;
+}
+
+.btn_delete2 {
+    width: 50px;
+    height: 40px;
+    position: absolute;
+    left: 670px;
+    top:313px;
+}
+
+.btn_registration3 {
+    width: 100px;
+    height: 40px;
+    position: absolute;
+    left: 670px;
+    top:220px;
+}
+
+.fa_profile2 {
+    width: 50px;
+    height: 50px;
+    font-size: 50px;
+    position: absolute;
+    left:80px;
+    top:240px;
+}
+
+.list_nick2 {
+    position: absolute;
+    left:80px;
+    top:320px;
+    font-weight: bold;
+}
+
+.list_content5 {
+    width: 475px;
+    height: 135px;
+    position: absolute;
+    left:160px;
+    top:420px;
+    border: 1px solid #0e47a1;
+}
+
+.btn_change3 {
+    width: 50px;
+    height: 40px;
+    position: absolute;
+    left: 670px;
+    top:470px;
+}
+
+.btn_delete3 {
+    width: 50px;
+    height: 40px;
+    position: absolute;
+    left: 670px;
+    top:513px;
+}
+
+.btn_registration4 {
+    width: 100px;
+    height: 40px;
+    position: absolute;
+    left: 670px;
+    top:420px;
+}
+
+.fa_profile3 {
+    width: 50px;
+    height: 50px;
+    font-size: 50px;
+    position: absolute;
+    left:80px;
+    top:440px;
+}
+
+.list_nick3 {
+    position: absolute;
+    left:80px;
+    top:520px;
+    font-weight: bold;
+}
+
+#paging {
+    position: absolute;
+    left:330px;
+    top:700px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.write_none1 {
+    display: none;
+}
+
+.write_none2 {
+    display: none;
+}
+
+.write_none3 {
+    width: 1000px;
+    display: none;
+    position: absolute;
+    top:-200px;
+}
+
+.btn_small{
+    width: 100px;
+    height: 40px;
+    background-color:#0e47a1;
+    color:#fff;
+    border:none;
+    position:relative;
+    font-size: 20px;
+    cursor:pointer;
+    transition:800ms ease all;
+    outline:none;
+    line-height: 40px;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.btn_small:hover{
+    background:transparent;
+    color:#0e47a1;
+}
+
+.btn_small:before,.btn_small:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: #0e47a1;
+    transition:400ms ease all;
+}
+
+.btn_small:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+}
+
+.btn_small:hover:before,.btn_small:hover:after{
+    width:100%;
+    transition:800ms ease all;
+}

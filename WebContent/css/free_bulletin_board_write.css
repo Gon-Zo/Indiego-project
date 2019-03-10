@@ -1,0 +1,145 @@
+body {
+    font-weight: bold;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+#wrap {
+    width: 1000px;
+    height:900px;
+    margin: auto;
+    position: relative;
+    border: 1px solid #d2d2d2;
+    border-top: none;
+    border-bottom: none;
+}
+
+.title {
+    width: 800px;
+    font-size: 30px;
+    border-bottom: 10px solid #fdd734;
+    position: absolute;
+    top:20px;
+}
+
+.inp_title {
+    width: 850px;
+    height: 25px;
+    position: absolute;
+    left:45px;
+    top:100px;
+    font-weight: bold;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.edit_border {
+    width: 902px;
+    height: 604px;
+    border: 2px solid #0e47a1;
+    position: absolute;
+    left: 45px;
+    top:170px;
+}
+
+#editSection {
+    width: 900px;
+    position: absolute;
+    left:1px;
+    top:1px;
+}
+
+.btn_small{
+    width: 100px;
+    height: 40px;
+    background-color:#0e47a1;
+    color:#fff;
+    border:none;
+    position:relative;
+    font-size: 20px;
+    cursor:pointer;
+    transition:800ms ease all;
+    outline:none;
+    line-height: 40px;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.btn_small:hover{
+    background:transparent;
+    color:#0e47a1;
+}
+
+.btn_small:before,.btn_small:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: #0e47a1;
+    transition:400ms ease all;
+}
+
+.btn_small:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+}
+
+.btn_small:hover:before,.btn_small:hover:after{
+    width:100%;
+    transition:800ms ease all;
+}
+
+
+
+.btn_small2{
+    width: 100px;
+    height: 40px;
+    background-color:#fdd734;
+    border:none;
+    position:relative;
+    font-size: 20px;
+    cursor:pointer;
+    transition:800ms ease all;
+    outline:none;
+    line-height: 40px;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.btn_small2:hover{
+    background:transparent;
+    color:#0e47a1;
+}
+
+.btn_small2:before,.btn_small2:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: #0e47a1;
+    transition:400ms ease all;
+}
+
+.btn_small2:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+}
+
+.btn_small2:hover:before,.btn_small2:hover:after{
+    width:100%;
+    transition:800ms ease all;
+}
+
+.btn_wrap {
+    position: absolute;
+    left:747px;
+    top:790px;
+}

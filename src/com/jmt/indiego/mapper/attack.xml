@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="attack">
+
+	<select id="selectListPage" resultType="Attack"
+		parameterType="PageVO">
+		select no , title , contents , views, regdate regdate,
+		main_img mainImg ,
+		game_no gameNo, nick_name nickName , gameTitle
+		from (
+		select no , title , contents , views , regdate , main_img , game_no
+		,
+		nick_name , gameTitle ,rownum r
+		from ( select a.no , a.title ,
+		a.contents , a.user_no , a.views , a.regdate , a.main_img , a.game_no
+		, u.nick_name ,
+		p.game_title gameTitle
+		from attack a , users u , project
+		p
+		where u.user_no = a.user_no
+		and p.no = a.game_no
+		and game_no =
+		#{gameNo})
+		)
+		where r between #{start} and #{end}
+	</select>
+
+
+	<select id="selectAttackTotal" resultType="int"
+		parameterType="int">
+		select count(*)
+		from attack
+		where game_no = #{no}
+	</select>
+
+	<select id="inderSelectList" resultType="attack"
+		parameterType="attack">
+		SELECT no,title,contents,user_no,views,regdate,main_img,game_no
+		FROM attack
+		ORDER BY no DESC;
+
+	</select>
+
+	<select id="selectInderList" resultType="Attack"
+		parameterType="String">
+		SELECT a.title,g.image
+		FROM users u,attack a,game g
+		WHERE u.user_no=a.user_no AND a.game_no=g.no AND u.nick_name=#{nickName}
+	</select>
+
+	<select id="selectAttackList" resultType="Attack">
+		SELECT a.no,a.title,a.contents,u.nick_name
+		nickname,a.views,l.likeNum,main_img mainImg,p.game_title gameTitle
+		FROM attack a,users u ,game g,project p,(SELECT contents_no
+		contentsNo,count(*) likeNum
+		FROM likes
+		WHERE type='A'
+		GROUP BY contents_no) l
+		WHERE a.no = l.contentsNo(+) AND a.user_no=u.user_no AND a.game_no=g.no AND
+		g.no=p.no
+	</select>
+	<select id="selectProfileAttack" parameterType="PageVO"
+		resultType="Attack">
+		SELECT no,title,contents,nickname,views,likeNum,mainImg,gameTitle
+		FROM(SELECT
+		no,title,contents,nickname,views,likeNum,mainImg,gameTitle,rowNum r
+		FROM(
+		SELECT a.no no,a.title title,a.contents contents,u.nick_name
+		nickname,a.views views,l.likeNum likeNum,main_img mainImg,p.game_title
+		gameTitle
+		FROM attack a,users u ,game g,project p,(SELECT contents_no
+		contentsNo,count(*) likeNum
+		FROM likes
+		WHERE type='A'
+		GROUP BY contents_no) l
+		WHERE a.no = l.contentsNo(+) AND a.user_no=u.user_no AND a.game_no=g.no AND
+		g.no=p.no AND a.user_no=#{userNo}
+		ORDER BY no DESC ))
+		WHERE r BETWEEN #{start} AND #{end}
+	</select>
+	<select id="selectAttackCount" resultType="int"
+		parameterType="int">
+		SELECT count(*)
+		FROM attack
+		WHERE user_no=#{userNo}
+	</select>
+
+	<select id="selectListLike" resultType="Attack">
+		SELECT *
+		FROM attack a, (SELECT contents_no contentsNo,count(*)
+		FROM likes
+		WHERE type='A'
+		GROUP BY contents_no) l
+		WHERE a.no = l.contentsNo(+)
+	</select>
+</mapper>

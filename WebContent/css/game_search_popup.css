@@ -1,0 +1,79 @@
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+
+}
+
+.popup_search_game {
+    margin: auto;
+    width: 900px;
+    height: 500px;
+    position: relative;
+    background: #ffffff;
+    display: none;
+}
+
+.box_search_input {
+    margin-left: 25px;
+    width: 855px;
+    height: 40px;
+    padding: 10px;
+}
+
+.box_game_list {
+    position: absolute;
+    top:60px;
+    left: 32px;
+    width: 830px;
+    height: 400px;
+    overflow: scroll;
+    max-width: 830px;
+    overflow-x:hidden;
+    box-shadow: #424242;
+
+    background-color: rgba(228, 228, 228, 0.3);
+
+}
+
+
+.input_game_title {
+    width: 300px;
+    height: 25px;
+}
+.card_search_game{
+    width: 240px;
+    height: 160px;
+    border: 1px solid #424242;
+    margin: 10px;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+
+.img_game{
+    width: 120px;
+    height: 140px;
+
+    position: absolute;
+    top:20px;
+
+}
+.text_game_title{
+    font-size: 20px;
+
+}
+
+.card_text{
+    position: absolute;
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+    left: 120px;
+    font-size: 18px;
+}
+.text_genre{
+    bottom:40px;
+
+}
+.text_price{
+    bottom: 10px;
+}

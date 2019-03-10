@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="question">
+
+	<select id="selectListPage" parameterType="PageVO"
+		resultType="Question">
+		select no , title , contents , visibility , regdate ,
+		user_no userNo,
+		game_no gameNo , nick_name nickName , userNo
+		from(
+		select no , title , contents , visibility , regdate , user_no ,
+		game_no ,
+		nick_name , rownum r , userNo
+		from(
+		select q.no , q.title ,
+		q.contents , q.visibility , q.regdate , q.user_no ,
+		q.game_no ,
+		u.nick_name , u.user_no userNo
+		from question q , users u
+		where q.user_no
+		= u.user_no
+		and game_no = #{gameNo}
+		order by regdate desc
+		)
+		)
+		where r
+		between #{start} and #{end}
+	</select>
+
+	<select id="selectQuestionTotal" resultType="int"
+		parameterType="int">
+		select count(*)
+		from question
+		where game_no = #{no}
+	</select>
+
+
+	<select id="selectOne" parameterType="int" resultType="Question">
+		select
+		q.no , q.title , q.contents , q.visibility , q.regdate , q.user_no
+		userNo,
+		q.game_no gameNo , u.nick_name nickName , u.profile_img
+		profileImg ,q.views
+		,u.user_no userNo
+		from question q , users u
+		where
+		q.user_no = u.user_no
+		and no = #{no}
+	</select>
+
+	<insert id="insertQestion" parameterType="Question">
+		INSERT INTO
+		question(no, title, contents, visibility, regdate, user_no,
+		views,
+		game_no)
+		VALUES(question_seq.nextval,#{title},#{contents},
+		#{visibility} , systimestamp , #{userNo} , 0, #{gameNo} )
+	</insert>
+
+	<delete id="deletList" parameterType="int">
+		delete question
+		where no =
+		#{no}
+	</delete>
+
+</mapper>

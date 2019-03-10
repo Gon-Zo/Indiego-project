@@ -1,0 +1,397 @@
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #fff;
+}
+
+.box_banner {
+    width: 1000px;
+    height: 400px;
+    background-color: #000;
+    position: relative;
+    overflow: hidden;
+    margin-top: 5px;
+}
+.box_banner_contents{
+    width: 4050px;
+    height: 400px;
+    position: relative;
+    transition: .5s ease;
+    left: 0;
+}
+
+
+     .box_banner {
+            width: 1000px;
+            height: 400px;
+            background-color: #000;
+            position: relative;
+            overflow: hidden;
+            margin-top: 5px;
+        }
+        .box_banner_contents{
+            width: 4050px;
+            height: 400px;
+            background-color: #26C6DA;
+            position: relative;
+            transition: .5s ease;
+            left: 0;
+        }
+        .img_banner{
+            width: 1000px;
+            height: 400px;
+            position: absolute;
+        }
+        .img_banner:nth-child(2){
+            left: 1000px;
+        }
+        .img_banner:nth-child(3){
+            left: 2000px;
+        }
+        .img_banner:nth-child(4){
+            left: 3000px;
+        }
+        .btn_banner{
+            width: 40px;
+            height: 70px;
+            color: #fff;
+            position: absolute;
+            font-size: 40px;
+            line-height: 70px;
+            top: 165px;
+            text-align: center;
+        }
+        .btn_banner :hover{
+            cursor: pointer;
+        }
+        #rightArrowBtn{
+            right: 10px;
+            background-color: rgba(0%,0%,0%,0.5);
+            cursor: pointer;
+        }
+        #rightArrowBtn:hover{
+            background-color: rgba(50%,50%,50%,0.5);
+        }
+        #leftArrowBtn{
+            left: 10px;
+            background-color: rgba(0%,0%,0%,0.5);
+            cursor: pointer;
+        }
+        #leftArrowBtn:hover{
+            background-color: rgba(50%,50%,50%,0.5);
+        }
+
+#listBox{
+    width: 1000px;
+    height: 285px;
+    /*background-color: rgba(250 , 250 , 250 , 1);*/
+    margin-top: 5px;
+}
+
+.box_tap{
+    width: 1000px;
+    height: 38px;
+    /*  background-color: #546E7A;*/
+    border-bottom: 2px solid rgba(228, 228, 228, 0.6); ;
+}
+
+.btn_tap{
+    width: 120px;
+    height: 37px;
+    background-color: transparent;
+    display: inline-block;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    color: silver;
+}
+
+.btn_tap:hover{
+    color: #424242;
+}
+
+.box_gameList_tap{
+    width: 1000px;
+    height: 240px;
+    /*   background-color: #0e47a1;*/
+    display: none;
+}
+
+
+#listBestIndieerBox{
+    width: 1000px;
+    height: 300px;
+}
+#communicationBox{
+    width: 1000px;
+    height: 650px;
+    /*background-color: #603712;*/
+    position: relative;
+}
+.list_communication_box{
+    width: 300px;
+    /*background-color: #fff;*/
+    position: absolute;
+    top: 10px;
+}
+#listFreeBoardBox{
+    left: 20px;
+}
+#listHotTalkBox{
+    left: 350px;
+}
+#listHelpBox{
+    left: 680px;
+}
+.mTitle_communication{
+    width: 300px;
+    height: 45px;
+    /*  background-color: #0e47a1;*/
+    color: #0e47a1;
+    line-height: 55px;
+    font-size: 20px;
+    text-indent: 5px;
+    border-bottom: 3px solid #0e47a1;
+    text-shadow: 1px 1px #424242;
+}
+.list_box{
+    width: 300px;
+    height: 47px;
+    background-color: transparent;
+    border-bottom: 3px solid rgba(228, 228, 228, 0.6);;
+}
+.list_box:hover{
+    border-bottom: 3px solid #5472d4;
+    cursor: pointer;
+}
+.list_box_one{
+    width: 300px;
+    height: 46px;
+    /*  background-color: #ff4b95;*/
+    border-bottom:2px solid rgba(228, 228, 228, 0.6);;
+    border-top:2px solid rgba(228, 228, 228, 0.6);;
+}
+.sTitle_FreeBoard , .text_ripple, .text_writer{
+    height: 50px;
+    display: inline-block;
+    line-height: 50px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.sTitle_FreeBoard{
+    width: 160px;
+    /*background-color: #76FF03;*/
+    font-size: 17px;
+}
+.text_ripple{
+    width: 50px;
+    /* background-color: #234234;*/
+    font-size: 15px;
+
+}
+.text_writer{
+    width: 73px;
+    /*  background-color: #6B500D;*/
+    font-size: 15px;
+}
+.list_elements , .list_game_name{
+    height: 50px;
+    display: inline-block;
+    text-align: center;
+    line-height: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.list_elements{
+    width: 90px;
+    /*background-color: #76FF03;*/
+}
+.list_game_name{
+    width: 200px;
+    /*background-color: #80D8FF;*/
+}
+.on_index{
+    display: block;
+}
+.click{
+    /*  background-color:  #0e47a1;*/
+    color: #0e47a1;
+    cursor: default;
+    border-bottom: 3px solid #0e47a1;
+    text-shadow: 1px 1px #424242;
+}
+.click:hover{
+    color: #0e47a1;
+    /* background-color:  #0e47a1;*/
+}
+.img_banner{
+    width: 1000px;
+    height: 400px;
+    object-fit: cover;
+}
+
+
+  .text_href{
+            text-decoration: none;
+            color: black;
+        }
+
+/*인더 카드*/
+
+.box_content {
+    width: 1000px;
+}
+
+#inderAttackBox {
+
+    height: 250px;
+}
+
+#inderAttackTitle {
+    width: 980px;
+    height: 30px;
+    margin: 10px;
+    color: #0e47a1;
+    font-size: 25px;
+    /*display: inline-block;*/
+    border-bottom: 2px solid #0e47a1;
+    text-shadow: 1px 1px #424242;
+    text-indent: 10px;
+}
+
+.box_inder {
+    display: inline-block;
+    width: 298px;
+    height: 198px;
+    margin-left: 25px;
+    position: relative;
+    border: 1px solid rgba(228, 228, 228, 0.6);
+
+}
+.box_inder:hover{
+    border: 1px solid #0e47a1;
+}
+.box_game_img {
+    position: absolute;
+    top: 30px;
+    width: 130px;
+    height: 170px;
+    text-align: center;
+    overflow: hidden;
+    font-size: 20px;
+
+}
+
+.box_attack_list {
+    padding-top: 5px;
+    position: absolute;
+    left: 120px;
+    width: 170px;
+    height: 190px;
+
+}
+
+.attack_nick {
+    text-align: center;
+    font-size: 17px;
+}
+
+.title_writing_inder {
+    width: 160px;
+    height: 19px;
+    margin: 8px;
+    cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border-bottom: 1px solid rgba(228, 228, 228, 0.6);
+}
+.title_writing_inder:hover{
+    border-bottom: 1px solid #0e47a1;
+}
+.list_writing_inder {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+
+.box_attack_writing>div {
+    position: absolute;
+}
+
+.box_num_attack div {
+    display: inline-block;
+    height: 150px;
+    line-height: 150px;
+    width: 110px;
+
+}
+
+strong{
+    font-size: 15px;
+}
+
+
+/*게임 카드*/
+
+.box_card{
+    width: 193px;
+    height: 220px;
+    position: relative;
+    display: inline-block;
+    /* margin-left: 2px;*/
+    background-color: rgba(250 , 250 , 250 , 1);
+    cursor:pointer;
+    text-indent: 3px;
+    top: 10px;
+    margin-top: 5px;
+}
+
+.box_card:hover{
+    background-color: #a7a7a7;
+}
+
+
+.img_thumbnail_game , .text_name  {
+    width: 150px;
+    position: absolute;
+    left: 22.5px;
+
+}
+.img_thumbnail_game{
+    height: 150px;
+    background-color: #000;
+    top: 10px;
+    /*      transition: 1s ease;*/
+    object-fit: cover;
+}
+.text_name , .text_genre , .text_price{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.text_name{
+    height: 30px;
+    top: 160px;
+    line-height: 30px;
+    text-align: start;
+}
+.text_genre , .text_price{
+    width: 75px;
+    height: 20px;
+    position: absolute;
+    top: 190px;
+    font-size: 12px;
+}
+.text_genre{
+    left: 22.5px;
+}
+.text_price{
+    left: 97.5px;
+}
+
+
+

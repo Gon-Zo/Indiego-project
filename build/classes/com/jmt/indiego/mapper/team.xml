@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="team">
+
+	<select id="selectList" resultType="Team" parameterType="int">
+		SELECT
+		project_no projectNO,type,warnings,nick_name nickName,email,phone_num
+		phoneNum,career_v careerV,phone_v phoneV,portfolio_v
+		portfolioV,profile_img profileImg,u.user_no userNo
+		FROM team t,users u
+		WHERE t.user_no = u.user_no
+		AND project_no=#{projectNo}
+	</select>
+
+	<delete id="deleteTeamUser" parameterType="Team">
+		DELETE
+		FROM team
+		WHERE
+		project_no = #{projectNo}
+		AND user_no = #{userNo}
+	</delete>
+
+<!-- //박정규 -->
+	<select id="selectGameList" parameterType="int"
+		resultType="Team">
+		select t.no , t.user_no userNo,t.case tCase ,t.project_no
+		projectNo,
+		u.nick_name nickName , u.profile_img profileImg
+		from team t ,
+		users u
+		where u.user_no = t.user_no
+		and ((t.case = 'M') or (t.case
+		='T'))
+		and t.project_no = #{no}
+	</select>
+
+</mapper>
+

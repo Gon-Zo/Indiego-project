@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="review">
+
+	<select id="selectAvg" parameterType="int" resultType="Review">
+		select
+		AVG(graphic)*20 graphic , AVG(sound)*20 sound , AVG(story)*20 story
+		,AVG(difficulty)*20 difficulty ,AVG(immersion)*20 immersion
+		from review
+		r , inder_review i
+		where r.no = i.no
+		and r.game_no = #{no}
+	</select>
+
+
+	<select id="selectReviewProfile" parameterType="PageVO"
+		resultType="Review">
+		SELECT gameTitle,gameImage,recommend,contents
+		FROM(
+		SELECT gameTitle,gameImage,recommend,contents,rownum r
+		FROM(
+		SELECT p.game_title gameTitle,g.image gameImage,v.recommend
+		recommend,v.contents contents
+		FROM review v,game g,project p
+		WHERE v.game_no=g.no AND g.no=p.no AND v.user_no=#{userNo}
+		ORDER BY v.no DESC ))
+		WHERE r BETWEEN #{start} AND #{end}
+	</select>
+
+	<select id="selectReviewCount" parameterType="int"
+		resultType="int">
+		SELECT count(*)
+		FROM review
+		WHERE user_no=#{userNo}
+	</select>
+
+</mapper>
+

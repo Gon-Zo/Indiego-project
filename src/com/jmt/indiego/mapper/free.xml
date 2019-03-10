@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="free">
+
+	<select id="selectIndexFree" resultType="Free">
+		select no ,title ,
+		contents , nickname , replyNum , likeNum
+		from(select f.no ,f.title ,
+		f.contents , u.nick_name nickname, replyNum , likeNum
+		, rownum r
+		FROM(select contents_no , count(*) likeNum
+		FROM(SELECT type ,
+		contents_no
+		FROM likes
+		WHERE type = 'F')
+		GRoup by contents_no )l ,
+		(select contents_no , count(*) replyNum
+		from(select contents_no
+		from
+		reply
+		where type = 'F')
+		group by contents_no)r,
+		free f , users u
+		where
+		f.no = l.contents_no
+		AND f.no = r.contents_no
+		AND f.user_no = u.user_no
+		order by likenum Desc)
+		WHERE r between 1 and 10
+	</select>
+
+	<select id="selectFreeProfile" resultType="Free"
+		parameterType="pageVO">
+		SELECT r,title,views,regdate,likeNum
+		FROM(
+		SELECT no,title,views,regdate,likeNum,rowNum r
+		FROM(
+		SELECT f.no no,title,views,regdate,l.likeNum likeNum
+		FROM free f,(SELECT contents_no contentsNo,count(*) likeNum
+		FROM likes
+		WHERE type='F'
+		GROUP BY contents_no) l
+		WHERE f.no = l.contentsNo(+) AND USER_no=#{userNo}
+		ORDER BY no DESC))
+		WHERE r BETWEEN #{start} AND #{end}
+	</select>
+
+	<select id="selectFreeCount" resultType="int">
+		SELECT COUNT(*)
+		FROM free
+		WHERE user_no=#{userNo}
+	</select>
+</mapper>
+

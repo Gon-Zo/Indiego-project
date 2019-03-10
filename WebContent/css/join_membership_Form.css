@@ -1,0 +1,306 @@
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: bold;
+}
+
+.msg_inp_id.ok {
+	color: #fdd734;
+}
+
+.msg_inp_id {
+	color: #0e47a1;
+}
+
+.content_inp.ok {
+	color: #fdd734;
+	
+}
+
+.content_inp {
+	color: #0e47a1;
+}
+
+.content_inp2.ok {
+	color: #fdd734;
+	
+}
+
+.content_inp2 {
+	color: #0e47a1;
+}
+	
+.msg_inp_nickname.ok {
+	color: #fdd734;
+	
+}
+
+.msg_inp_nickname {
+	color: #0e47a1;
+}
+
+#wrap {
+    width: 700px;
+    height: 700px;
+    position: fixed;
+    left:50%;
+    top:50%;
+    margin: -350px 0 0 -350px;
+}
+
+.content {
+    width: 598px;
+    height: 648px;
+    position: relative;
+    left:50px;
+    top:25px;
+    border: 1px solid #0e47a1;
+}
+
+.img_logo {
+    width:150px;
+    height:150px;
+    position: absolute;
+    left: 225px;
+    top:20px;
+}
+
+.form_content {
+    width: 600px;
+    height: 460px;
+    position: absolute;
+    top:190px;
+    line-height: 55px;
+}
+
+.inp_id {
+    width: 300px;
+    height: 30px;
+    position: absolute;
+    left:70px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: bold;
+}
+
+
+
+.inp_pwd {
+    width: 300px;
+    height: 30px;
+    position: absolute;
+    left:70px;
+    top:80px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: bold;
+}
+
+
+.msg_inp_id {
+	position: absolute;
+	left:100px;
+	top:20px;
+}
+
+.content_inp {
+    font-weight: bold;
+    position: absolute;
+    left:100px;
+    top:100px;
+}
+
+.inp_pwd2 {
+    width: 300px;
+    height: 30px;
+    position: absolute;
+    left:70px;
+    top:160px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: bold;
+}
+
+.content_inp2 {
+    font-weight: bold;
+    position: absolute;
+    left:100px;
+    top:180px;
+}
+
+.inp_nickname {
+    width: 300px;
+    height: 30px;
+    position: absolute;
+    left:70px;
+    top:240px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: bold;
+}
+
+.msg_inp_nickname {
+	position: absolute;
+	left:100px;
+	top:260px;
+}
+
+.inp_mail {
+    width: 170px;
+    height: 30px;
+    position: absolute;
+    left:70px;
+    top:320px;
+}
+
+.mail_icon {
+    font-size: 25px;
+    position: absolute;
+    left:250px;
+    top:308px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: bold;
+}
+
+.inp_mail2 {
+    width: 120px;
+    height: 30px;
+    position: absolute;
+    left:280px;
+    top:320px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: bold;
+}
+
+.select_mail {
+    height: 35px;
+    position: absolute;
+    left:420px;
+    top:320px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: bold;
+}
+
+.btn_join {
+    position: absolute;
+    left:250px;
+    top:390px;
+}
+
+
+#popup {
+    width: 300px;
+    height: 150px;
+    position: fixed;
+    top:50%;
+    left:50%;
+    margin: -76px 0 0 -151px;
+    background: #FFFFFF;
+    text-align: center;
+    display: none;
+    border: 1px solid #0e47a1;
+}
+
+.popup_content {
+    line-height: 70px;
+
+}
+
+.popup_title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.btn_ok {
+    width: 120px;
+    height: 40px;
+    position: relative;
+    left:90px;
+}
+
+
+.btn_small{
+     width: 100px;
+     height: 40px;
+     background-color:#0e47a1;
+     color:#fff;
+     border:none;
+     position:relative;
+     font-size: 20px;
+     cursor:pointer;
+     transition:800ms ease all;
+     outline:none;
+     line-height: 40px;
+     text-align: center;
+     font-family: 'Noto Sans KR', sans-serif;
+     font-weight: bold;
+ }
+
+.btn_small:hover{
+    background:transparent;
+    color:#0e47a1;
+}
+
+.btn_small:before,.btn_small:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: #0e47a1;
+    transition:400ms ease all;
+}
+
+.btn_small:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+}
+
+.btn_small:hover:before,.btn_small:hover:after{
+    width:100%;
+    transition:800ms ease all;
+}
+
+
+
+.btn_small2{
+    width: 100px;
+    height: 40px;
+    background-color:#fdd734;
+    border:none;
+    position:relative;
+    font-size: 20px;
+    cursor:pointer;
+    transition:800ms ease all;
+    outline:none;
+    line-height: 40px;
+    text-align: center;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: bold;
+}
+
+.btn_small2:hover{
+    background:transparent;
+    color:#0e47a1;
+}
+
+.btn_small2:before,.btn_small2:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: #0e47a1;
+    transition:400ms ease all;
+}
+
+.btn_small2:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+}
+
+.btn_small2:hover:before,.btn_small2:hover:after{
+    width:100%;
+    transition:800ms ease all;
+}
