@@ -1,5 +1,7 @@
 package com.jmt.indiego.vo;
+
 import java.sql.Timestamp;
+
 public class Attack {
 	private int no, userNo, views, gameNo;
 	private String title, contents, mainImg;

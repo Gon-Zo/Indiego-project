@@ -4,16 +4,16 @@ import java.sql.Date;
 import java.sql.Timestamp;
 
 public class Project {
-	
-	private int no,genreNo,userNo,maxPersonnel;
-	private String title,gameTitle,visibility,system,image;
-	private Date startDate,endDate;
+
+	private int no, genreNo, userNo, maxPersonnel;
+	private String title, gameTitle, visibility, system, image;
+	private Date startDate, endDate;
 	private Timestamp regdate;
 
 	public Project() {
 		// TODO Auto-generated constructor stub
 	}
-	
+
 	public int getNo() {
 		return no;
 	}
@@ -109,10 +109,11 @@ public class Project {
 	public void setRegdate(Timestamp regdate) {
 		this.regdate = regdate;
 	}
-	
-	//박정규
-	private int count , teamcount;
-	private String  userName , genrename ;
+
+	// 박정규
+	private int count, teamcount;
+	private String userName, genrename;
+
 	public int getCount() {
 		return count;
 	}
@@ -136,7 +137,7 @@ public class Project {
 	public void setGenrename(String genrename) {
 		this.genrename = genrename;
 	}
-	
+
 	public int getTeamcount() {
 		return teamcount;
 	}

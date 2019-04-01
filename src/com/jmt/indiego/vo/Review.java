@@ -3,13 +3,11 @@ package com.jmt.indiego.vo;
 import java.sql.Date;
 
 public class Review {
-	//������
 	private int graphic, story, difficulty, immersion, sound;
-	int no,userNo,gameNo;
-	String contents,gameTitle,gameImage,recommend;
+	int no, userNo, gameNo;
+	String contents, gameTitle, gameImage, recommend;
 	Date regdate;
-	
-	
+
 	public Review() {
 		super();
 	}

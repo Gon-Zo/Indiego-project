@@ -2,12 +2,11 @@ package com.jmt.indiego.dao;
 
 import org.apache.ibatis.session.SqlSession;
 
-public class PortfolioDAOImpl implements PortfolioDAO{
+public class PortfolioDAOImpl implements PortfolioDAO {
 
-	
 	private SqlSession session;
-	
+
 	public void setSession(SqlSession session) {
 		this.session = session;
-}
+	}
 }

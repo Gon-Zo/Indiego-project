@@ -5,26 +5,20 @@ import java.time.LocalDateTime;
 
 public class AbTest {
 	private int no, userNo, r, voteNum;
-	private String title, contentsA, contentsB, imageA, imageB,nickname;
+	private String title, contentsA, contentsB, imageA, imageB, nickname;
 	private Date term, regdate;
-	
+
 	public AbTest() {
 		super();
 	}
-	
-	
-	
+
 	public String getNickname() {
 		return nickname;
 	}
 
-
-
 	public void setNickname(String nickname) {
 		this.nickname = nickname;
 	}
-
-
 
 	public int getVoteNum() {
 		return voteNum;
@@ -103,12 +97,12 @@ public class AbTest {
 	}
 
 	public int getDDay() {
-		
+
 		LocalDateTime now = LocalDateTime.now();
-		
+
 		return 0;
 	}
-	
+
 	public Date getTerm() {
 		return term;
 	}
@@ -120,5 +114,5 @@ public class AbTest {
 	public void setRegdate(Date regdate) {
 		this.regdate = regdate;
 	}
-	
+
 }

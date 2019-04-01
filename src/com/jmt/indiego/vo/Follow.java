@@ -9,13 +9,12 @@ public class Follow {
 	public Follow() {
 	}
 
-	//userNo가 followNo 를 팔로우
+	// userNo가 followNo 를 팔로우
 	public Follow(int followNo, int userNo) {
 		super();
 		this.followNo = followNo;
 		this.userNo = userNo;
 	}
-
 
 	public int getNo() {
 		return no;

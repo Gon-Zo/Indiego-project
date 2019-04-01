@@ -26,47 +26,39 @@ public class UserController {
 	public void setUserService(UsersService userService) {
 		this.userService = userService;
 	}
-	
+
 	public void setFileRenameUtil(FileRenameUtil fileRenameUtil) {
 		this.fileRenameUtil = fileRenameUtil;
 	}
 
+	@RequestMapping(value = "/session", method = RequestMethod.POST)
+	public String login(@RequestHeader String referer, User user, HttpSession session) {
 
-
-	@RequestMapping(value="/session",method=RequestMethod.POST)
-	public String login(@RequestHeader String referer,User user,HttpSession session) {
-		
-		
 		session.setAttribute("loginUser", userService.login(user));
-		
+
 		System.out.println("POST /session");
-		
-	return "redirect:"+referer;
-	
+
+		return "redirect:" + referer;
+
 	}
-	@RequestMapping(value="/session",method=RequestMethod.DELETE)
-	public String logout(@RequestHeader String referer,HttpSession session) {
-		
+
+	@RequestMapping(value = "/session", method = RequestMethod.DELETE)
+	public String logout(@RequestHeader String referer, HttpSession session) {
+
 		session.invalidate();
-		
+
 		System.out.println("DELETE /session");
-		
-		
-		return "redirect:"+referer;
+
+		return "redirect:" + referer;
 	}
-	
+
 	@RequestMapping(value = "/profile/{no}", method = RequestMethod.GET)
 	public String profilePage(Model model, @PathVariable int no, HttpSession session) {
-		System.out.println("GET /profile");
-
 		int loginNo = 0;
-
 		User loginUser = (User) session.getAttribute("loginUser");
-
 		if (loginUser != null) {
 			loginNo = loginUser.getUserNo();
 		}
-
 		model.addAllAttributes(userService.getProfile(no, loginNo));
 		return "profile";
 	};
@@ -125,6 +117,5 @@ public class UserController {
 	public Map<String, Object> getProfileBuyList(@PathVariable int pageNo, int userNo) {
 		return userService.getProfileBuyList(pageNo, userNo);
 	}
-	
-	
+
 }

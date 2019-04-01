@@ -14,49 +14,34 @@
 		<mvc:jsp prefix="/WEB-INF/view/" suffix=".jsp" />
 	</mvc:view-resolvers>
 
-
 	<!-- MultipartResovler -->
 	<bean id="multipartResolver" p:defaultEncoding="UTF-8"
 		p:maxUploadSize="104857600"
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
-
 	<mvc:view-controller path="/abTest_main_page" />
 
-
 	<!-- Controller -->
-
 	<bean class="com.jmt.indiego.cotroller.CommunityController" />
-
-	<!-- 노승현 -->
 	<bean p:projectService-ref="projectService"
 		p:ideaService-ref="ideaService"
 		class="com.jmt.indiego.cotroller.ProjectController" />
-	<!-- 방미리 -->
-	<bean p:fileRenameUtil-ref="fileRenameUtil" p:userService-ref="usersService"
+	<bean p:fileRenameUtil-ref="fileRenameUtil"
+		p:userService-ref="usersService"
 		class="com.jmt.indiego.cotroller.UserController" />
-
-	<!-- 박정규 -->
-	<bean p:gameService-ref="gameService"
-		p:freeService-ref="freeService" p:replyService-ref="replyService"
-		p:abTestService-ref="abTestService"
+	<bean p:usersService-ref="usersService"
 		class="com.jmt.indiego.cotroller.IndexController" />
 	<bean p:gameService-ref="gameService"
 		p:projectService-ref="projectService"
 		class="com.jmt.indiego.cotroller.GameController" />
-
-	<!-- 김혜련 -->
 	<bean p:abChoiceService-ref="abChoiceService"
 		p:abTestService-ref="abTestService"
 		p:fileRenameUtil-ref="fileRenameUtil"
 		class="com.jmt.indiego.cotroller.AbTestController" />
-
-	<!-- 모든 요청이 DispatcherServlet으로 들어가기 때문에 resource를 설정해야합니다. -->
 
 	<mvc:resources location="/css/" mapping="/css/**" />
 	<mvc:resources location="/img/" mapping="/img/**" />
 	<mvc:resources location="/upload/" mapping="/upload/**" />
 	<mvc:resources location="/js/" mapping="/js/**" />
 	<mvc:resources location="/fonts/" mapping="/fonts/**" />
-
 
 </beans>

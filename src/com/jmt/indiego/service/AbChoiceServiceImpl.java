@@ -4,9 +4,9 @@ import com.jmt.indiego.dao.AbChoiceDAO;
 import com.jmt.indiego.vo.AbChoice;
 
 public class AbChoiceServiceImpl implements AbChoiceService {
-	
+
 	private AbChoiceDAO abChoiceDAO;
-	
+
 	public void setAbChoiceDAO(AbChoiceDAO abChoiceDAO) {
 		this.abChoiceDAO = abChoiceDAO;
 	}
@@ -17,23 +17,8 @@ public class AbChoiceServiceImpl implements AbChoiceService {
 	}
 
 	@Override
-	public String chosen(AbChoice abChoice) {
-		return abChoiceDAO.selectedChoice(abChoice);
-	}
-
-	@Override
 	public boolean editChoice(AbChoice abChoice) {
-		return 1==abChoiceDAO.updateChoice(abChoice);
-	}
-
-	@Override
-	public int resultA(int contentsNo) {
-		return abChoiceDAO.selectCountA(contentsNo);
-	}
-
-	@Override
-	public int resultB(int contentsNo) {
-		return abChoiceDAO.selectCountB(contentsNo);
+		return 1 == abChoiceDAO.updateChoice(abChoice);
 	}
 
 }

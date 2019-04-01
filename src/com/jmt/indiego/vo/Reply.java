@@ -3,7 +3,6 @@ package com.jmt.indiego.vo;
 import java.sql.Timestamp;
 
 public class Reply {
-	//¹ÚÁ¤±Ô
 	private int no, contentsNo, userNo, seqNo, userNo2;
 	private String title, contents, visivbility, type, gameTitle;
 	private Timestamp regdate;

@@ -11,9 +11,8 @@ import com.jmt.indiego.vo.Question;
 import com.jmt.indiego.vo.Reply;
 
 public interface GameService {
-	public List<Game> popularGame();
 
-	public List<Game> bestGame();
+	public List<Game> popularGame();
 
 	public List<Game> search(String title);
 
@@ -36,14 +35,14 @@ public interface GameService {
 	public Map<String, Object> numAjext(int gameNo);
 
 	public int touchHeart(Like likes);
-	
+
 	public boolean selectGameHeart(Like likes);
-	
+
 	public int upLoadGame(Game game);
 
 	public int upLoadSpecM(GameSpec gameSpec);
-	
+
 	public int upLoadSpecB(GameSpec gameSpec);
-	
+
 	public int upLoadImage(Image image);
 }// GameService end

@@ -18,14 +18,15 @@ import com.jmt.indiego.vo.Team;
 
 @Controller
 public class ProjectController {
+
 	private ProjectService projectService;
+	private IdeaService ideaService;
 
 	public void setProjectService(ProjectService projectService) {
 		this.projectService = projectService;
 	};
 
 	// ������
-	private IdeaService ideaService;
 
 	public void setIdeaService(IdeaService ideaService) {
 		this.ideaService = ideaService;
@@ -34,19 +35,7 @@ public class ProjectController {
 	@RequestMapping(value = "/ajax/project/title", method = RequestMethod.POST)
 	@ResponseBody
 	public String projectTitleUpdate(Project project) {
-
-		System.out.println(project.getNo());
-		System.out.println(project.getTitle());
-		System.out.println(project.getGameTitle());
-		System.out.println(project.getVisibility());
-		System.out.println(project.getMaxPersonnel());
-		System.out.println(project.getStartDate());
-		System.out.println(project.getEndDate());
-		System.out.println(project.getSystem());
-		System.out.println(project.getGenreNo());
-
 		projectService.modifyAttr(project);
-
 		return "{\"result\":true}";
 	}
 
@@ -91,33 +80,74 @@ public class ProjectController {
 		return "redirect:/project/{projectNo}";
 	}
 
-	// ������
+	/**
+	 * @name projectMain \n
+	 * @brief 프로젝트 메인페이지로 가는 함수\n
+	 * @return String \n
+	 * @author park \n
+	 * @version 1.0 \n
+	 * @see None \n
+	 */
 	@RequestMapping(value = "/project/main", method = RequestMethod.GET)
-	public String projectMain(Model model) {
-		System.out.println("GET : project main");
-		model.addAttribute("hotProjects", projectService.hotProject());
-		model.addAttribute("ideaTens", ideaService.bestTenIdea());
+	public String projectMain() {
 		return "projectMain";
 	}// projectMain end
 
-	@RequestMapping(value = "/ajax/project/search/title", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+	/**
+	 * @name projectMainList \n
+	 * @brief 프로젝트 메인페이지에 보여줄 리스트 출력 함수\n
+	 * @return Map<String, Object> \n
+	 * @author park \n
+	 * @version 1.0 \n
+	 * @see None \n
+	 */
+	@RequestMapping(value = "/project/main", method = RequestMethod.GET)
+	public Map<String, Object> projectMainList() {
+		return projectService.mainProject();
+	}// projectMain end
+
+	/**
+	 * @name searchProject \n
+	 * @brief 프로젝트 메인페이지에서 자동완성를 보여주는 함수\n
+	 * @param String title \n
+	 * @return List<Project> \n
+	 * @author park \n
+	 * @version 1.0 \n
+	 * @see None \n
+	 */
+	@RequestMapping(value = "/ajax/project/search/title", method = RequestMethod.POST)
 	@ResponseBody
 	public List<Project> searchProject(String title) {
-		System.out.println("POST : search project");
 		return projectService.searchProject(title);
 	}// searchProject end
 
-	@RequestMapping(value = "/ajax/project/latest/page/{pageNo}", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+	/**
+	 * @name lastProjectList \n
+	 * @brief 프로젝트 메인페이지에서 최신순 정렬을 보여주는 함수\n
+	 * @param int pageNo \n
+	 * @return Map<String, Object> \n
+	 * @author park \n
+	 * @version 1.0 \n
+	 * @see None \n
+	 */
+	@RequestMapping(value = "/ajax/project/latest/page/{pageNo}", method = RequestMethod.POST)
 	@ResponseBody
-	public Map<String, Object> lastGameList(@PathVariable int pageNo) {
-		System.out.println("POST : project pageList By last");
+	public Map<String, Object> lastProjectList(@PathVariable int pageNo) {
 		return projectService.latestPage(pageNo);
 	}// lastGameList end
 
-	@RequestMapping(value = "/ajax/project/popular/page/{pageNo}", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+	/**
+	 * @name popularPage \n
+	 * @brief 프로젝트 메인페이지에서 인기순 정렬을 보여주는 함수\n
+	 * @param int pageNo \n
+	 * @return Map<String, Object> \n
+	 * @author park \n
+	 * @version 1.0 \n
+	 * @see None \n
+	 */
+	@RequestMapping(value = "/ajax/project/popular/page/{pageNo}", method = RequestMethod.POST)
 	@ResponseBody
 	public Map<String, Object> popularPage(@PathVariable int pageNo) {
-		System.out.println("POST : project pageList By popular");
 		return projectService.popularPage(pageNo);
 	}// popularPage end
 }

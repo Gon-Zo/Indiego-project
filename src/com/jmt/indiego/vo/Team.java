@@ -4,11 +4,10 @@ import java.sql.Timestamp;
 
 public class Team {
 
-
-	private int no,projectNo,warnings,userNo;
-	private String type,nickName,email,phoneNum,careerV,phoneV,portfolioV,profileImg;
+	private int no, projectNo, warnings, userNo;
+	private String type, nickName, email, phoneNum, careerV, phoneV, portfolioV, profileImg;
 	private Timestamp regdate;
-	
+
 	public Team() {
 		// TODO Auto-generated constructor stub
 	}
@@ -17,7 +16,6 @@ public class Team {
 		return no;
 	}
 
-	
 	public String getNickName() {
 		return nickName;
 	}
@@ -117,8 +115,8 @@ public class Team {
 	public void setRegdate(Timestamp regdate) {
 		this.regdate = regdate;
 	}
-	
-	//╧за╓╠т
+
+	// О©╫О©╫О©╫О©╫О©╫О©╫
 	private int warings;
 	private String tCase;
 
@@ -137,6 +135,5 @@ public class Team {
 	public void settCase(String tCase) {
 		this.tCase = tCase;
 	}
-	
-	
+
 }

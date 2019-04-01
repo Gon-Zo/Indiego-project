@@ -1,5 +1,7 @@
 package com.jmt.indiego.cotroller;
 
+import java.util.Map;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,40 +11,41 @@ import com.jmt.indiego.service.AbTestService;
 import com.jmt.indiego.service.FreeService;
 import com.jmt.indiego.service.GameService;
 import com.jmt.indiego.service.ReplyService;
+import com.jmt.indiego.service.UsersService;
 
 @Controller
 public class IndexController {
-	private GameService gameService;
-	private FreeService freeService;
-	private ReplyService replyService;
-	private AbTestService abTestService;
 
-	public void setGameService(GameService gameService) {
-		this.gameService = gameService;
+	private UsersService usersService;
+
+	public void setUsersService(UsersService usersService) {
+		this.usersService = usersService;
 	}
 
-	public void setFreeService(FreeService freeService) {
-		this.freeService = freeService;
-	}
-
-	public void setReplyService(ReplyService replyService) {
-		this.replyService = replyService;
-	}
-
-	public void setAbTestService(AbTestService abTestService) {
-		this.abTestService = abTestService;
-	}
-
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String index(Model model) {
-		System.out.println("GET : index");
-
-		model.addAttribute("gamePopulars", gameService.popularGame());
-		model.addAttribute("freeBests", freeService.bestFreeList());
-		model.addAttribute("debateBsets", replyService.debateBestList());
-		model.addAttribute("gameBests", gameService.bestGame());
-		model.addAttribute("abTestBests", abTestService.bestABTest());
-
+	/**
+	 * @name index \n
+	 * @brief 인덱스 페이지 페이지 이동 \n
+	 * @return String \n
+	 * @author park \n
+	 * @version 1.0 \n
+	 * @see None \n
+	 */
+	@RequestMapping(value = { "/", "index" }, method = RequestMethod.GET)
+	public String index() {
 		return "index";
 	}// index end
+
+	/**
+	 * @name indexList \n
+	 * @brief 인덱스 페이지에 보여줄 리스트 출력 \n
+	 * @return Map<String, Object> \n
+	 * @author park \n
+	 * @version 1.0 \n
+	 * @see None \n
+	 */
+	@RequestMapping(value = { "/", "index" }, method = RequestMethod.GET)
+	public Map<String, Object> indexList() {
+		return usersService.indexList();
+	}// indexList end
+
 }

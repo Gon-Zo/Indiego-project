@@ -12,7 +12,6 @@ public interface ProjectDAO {
 
 	public int updateAttr(Project project);
 
-	// ¹ÚÁ¤±Ô
 	public List<Project> selectPageList(PageVO pageVO);
 
 	public List<Project> selectPopularProject(PageVO pageVO);

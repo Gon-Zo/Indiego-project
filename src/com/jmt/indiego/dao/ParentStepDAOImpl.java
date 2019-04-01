@@ -8,17 +8,18 @@ import com.jmt.indiego.vo.ParentStep;
 
 public class ParentStepDAOImpl implements ParentStepDAO {
 
-	
 	private SqlSession session;
-	
+
 	public void setSession(SqlSession session) {
 		this.session = session;
-}
+	}
+
 	@Override
 	public List<ParentStep> selectList(int no) {
-	
-		return session.selectList("parentStep.selectList",no);
+
+		return session.selectList("parentStep.selectList", no);
 	}
+
 	@Override
 	public int insertParentStep(ParentStep parentStep) {
 		// TODO Auto-generated method stub

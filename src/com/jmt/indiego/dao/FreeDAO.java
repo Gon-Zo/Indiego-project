@@ -7,7 +7,8 @@ import com.jmt.indiego.vo.PageVO;
 
 public interface FreeDAO {
 	public List<Free> selectIndexFree();
-	public List<Free> selectFreeProfile(PageVO pageVO ) ;
-	
+
+	public List<Free> selectFreeProfile(PageVO pageVO);
+
 	public int selectFreeCount(int userNo);
 }

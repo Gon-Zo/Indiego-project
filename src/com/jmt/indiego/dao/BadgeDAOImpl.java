@@ -6,10 +6,10 @@ import org.apache.ibatis.session.SqlSession;
 
 import com.jmt.indiego.vo.Badge;
 
-public class BadgeDAOImpl implements BadgeDAO{
+public class BadgeDAOImpl implements BadgeDAO {
 
 	private SqlSession session;
-	
+
 	public void setSession(SqlSession session) {
 		this.session = session;
 	}
@@ -17,6 +17,6 @@ public class BadgeDAOImpl implements BadgeDAO{
 	@Override
 	public List<Badge> selectUserBadge(int userNo) {
 		// TODO Auto-generated method stub
-		return session.selectList("badge.selectUserBadge",userNo);
+		return session.selectList("badge.selectUserBadge", userNo);
 	}
 }

@@ -7,7 +7,7 @@ public class Genre {
 	private int no;
 	private String title;
 	private Timestamp regdate;
-	
+
 	public Genre() {
 		// TODO Auto-generated constructor stub
 	}
@@ -35,7 +35,5 @@ public class Genre {
 	public void setRegdate(Timestamp regdate) {
 		this.regdate = regdate;
 	}
-	
-	
-	
+
 }

@@ -27,9 +27,7 @@ public interface ProjectService {
 
 	public boolean addParentStep(ParentStep parentStep);
 
-	/// ¹ÚÁ¤±Ô
-
-	public List<Project> hotProject();
+	public Map<String, Object> mainProject();
 
 	public List<Project> searchProject(String title);
 

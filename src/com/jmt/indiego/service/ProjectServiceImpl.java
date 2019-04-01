@@ -5,6 +5,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 import com.jmt.indiego.dao.GenreDAO;
+import com.jmt.indiego.dao.IdeaDAO;
 import com.jmt.indiego.dao.ParentStepDAO;
 import com.jmt.indiego.dao.ProjectCheckDAO;
 import com.jmt.indiego.dao.ProjectDAO;
@@ -17,7 +18,6 @@ import com.jmt.indiego.vo.ProjectCheck;
 import com.jmt.indiego.vo.Team;
 import com.jmt.indiego.vo.PageVO;
 
-
 public class ProjectServiceImpl implements ProjectService {
 
 	private ProjectDAO projectDAO;
@@ -25,6 +25,8 @@ public class ProjectServiceImpl implements ProjectService {
 	private TeamDAO teamDAO;
 	private ParentStepDAO parentStepDAO;
 	private ProjectCheckDAO projectCheckDAO;
+	private IdeaDAO ideaDAO;
+	private PaginateUtil paginateUtil;
 
 	public void setProjectDAO(ProjectDAO projectDAO) {
 		this.projectDAO = projectDAO;
@@ -45,17 +47,17 @@ public class ProjectServiceImpl implements ProjectService {
 	public void setProjectCheckDAO(ProjectCheckDAO projectCheckDAO) {
 		this.projectCheckDAO = projectCheckDAO;
 	};
-	
-	
-	private PaginateUtil paginateUtil;
 
 	public void setPaginateUtil(PaginateUtil paginateUtil) {
 		this.paginateUtil = paginateUtil;
 	}
 
+	public void setIdeaDAO(IdeaDAO ideaDAO) {
+		this.ideaDAO = ideaDAO;
+	}
+
 	@Override
 	public Project getProject(int no) {
-
 		return projectDAO.slelectOne(no);
 	}
 
@@ -101,21 +103,47 @@ public class ProjectServiceImpl implements ProjectService {
 		return 1 == parentStepDAO.insertParentStep(parentStep);
 	}
 
-	// ������
-
+	/**
+	 * @name mainProject \n
+	 * @brief 프로젝트 메인페이지에 보여줄 리스트 출력 함수\n
+	 * @return Map<String, Object> \n
+	 * @author park \n
+	 * @version 1.0 \n
+	 * @see None \n
+	 */
 	@Override
-	public List<Project> hotProject() {
+	public Map<String, Object> mainProject() {
 		// TODO Auto-generated method stub
-		return projectDAO.selectHot();
+		Map<String, Object> map = new ConcurrentHashMap<>();
+		map.put("hotProjects", projectDAO.selectHot());
+		map.put("ideaTens", ideaDAO.selctBestTenIdea());
+		return map;
 	}
 
+	/**
+	 * @name searchProject \n
+	 * @brief 프로젝트 메인페이지에서 자동완성를 보여주는 함수\n
+	 * @param String title \n
+	 * @return List<Project> \n
+	 * @author park \n
+	 * @version 1.0 \n
+	 * @see None \n
+	 */
 	@Override
 	public List<Project> searchProject(String title) {
 		// TODO Auto-generated method stub
-		title = "%" + title + "%";
 		return projectDAO.searchList(title);
 	}
 
+	/**
+	 * @name latestPage \n
+	 * @brief 프로젝트 메인페이지에서 최신순 정렬을 보여주는 함수\n
+	 * @param int pageNo \n
+	 * @return Map<String, Object> \n
+	 * @author park \n
+	 * @version 1.0 \n
+	 * @see None \n
+	 */
 	@Override
 	public Map<String, Object> latestPage(int pageNo) {
 		Map<String, Object> map = new ConcurrentHashMap<>();
@@ -128,13 +156,21 @@ public class ProjectServiceImpl implements ProjectService {
 		String url = "/project/main/page/";
 		String paginate = paginateUtil.getPaginate(pageNo, total, numPage, numBlock, url);
 
-
 		map.put("list", list);
 		map.put("paginate", paginate);
-		
+
 		return map;
 	}
 
+	/**
+	 * @name popularPage \n
+	 * @brief 프로젝트 메인페이지에서 인기순 정렬을 보여주는 함수\n
+	 * @param int pageNo \n
+	 * @return Map<String, Object> \n
+	 * @author park \n
+	 * @version 1.0 \n
+	 * @see None \n
+	 */
 	@Override
 	public Map<String, Object> popularPage(int pageNo) {
 		Map<String, Object> map = new ConcurrentHashMap<>();

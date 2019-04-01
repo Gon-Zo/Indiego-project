@@ -8,37 +8,26 @@ import java.text.SimpleDateFormat;
 public class Game {
 	private int no, price, likes, evaluation, downloads, count, userNo;
 	private Integer salePrice;
-	private String image, contents, fileName, system,gameTitle,genre;
+	private String image, contents, fileName, system, gameTitle, genre;
 	private Date releaseDate;
 	private Timestamp regdate;
-
 	private String gameName, title, projectImg;
 
-
-	
 	public int getUserNo() {
 		return userNo;
 	}
 
-	
-	
 	public String getGameTitle() {
 		return gameTitle;
 	}
-
-
 
 	public void setGameTitle(String gameTitle) {
 		this.gameTitle = gameTitle;
 	}
 
-
-
 	public Integer getSalePrice() {
 		return salePrice;
 	}
-
-
 
 	public void setSalePrice(Integer salePrice) {
 		this.salePrice = salePrice;

@@ -2,7 +2,7 @@ package com.jmt.indiego.vo;
 
 public class PageVO {
 
-	private int start, end,typeNo,userNo;
+	private int start, end, typeNo, userNo, gameNo;
 
 	public PageVO() {
 		// TODO Auto-generated constructor stub
@@ -18,16 +18,15 @@ public class PageVO {
 		start = end - (numPage - 1);
 		this.gameNo = gameNo;
 	}
-	
-	public PageVO(int page, int numPage, int userNo,int x) {
+
+	public PageVO(int page, int numPage, int userNo, int x) {
 		super();
 		this.userNo = userNo;
 
-		end = page*numPage;
-		start = end-(numPage-1);
+		end = page * numPage;
+		start = end - (numPage - 1);
 	}
 
-	
 	public int getTypeNo() {
 		return typeNo;
 	}
@@ -59,9 +58,6 @@ public class PageVO {
 	public void setEnd(int end) {
 		this.end = end;
 	}
-
-	// ������
-	private int gameNo;
 
 	public int getGameNo() {
 		return gameNo;

@@ -6,19 +6,17 @@ import org.apache.ibatis.session.SqlSession;
 
 import com.jmt.indiego.vo.ProjectCheck;
 
-public class ProjectCheckDAOImpl implements ProjectCheckDAO{
+public class ProjectCheckDAOImpl implements ProjectCheckDAO {
 
-	
-	
 	private SqlSession session;
-	
+
 	public void setSession(SqlSession session) {
 		this.session = session;
-}
-	
+	}
+
 	@Override
 	public List<ProjectCheck> selectList(int no) {
 		// TODO Auto-generated method stub
-		return session.selectList("projectcheck.selectList",no);
+		return session.selectList("projectcheck.selectList", no);
 	}
 }

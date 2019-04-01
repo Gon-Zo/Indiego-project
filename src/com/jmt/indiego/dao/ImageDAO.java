@@ -8,6 +8,6 @@ public interface ImageDAO {
 	public List<Image> selectList(int no);
 
 	public Image selectOne(int no);
-	
+
 	public int insertGameImage(Image image);
 }

@@ -16,24 +16,31 @@ public class AbTestDAOImpl implements AbTestDAO {
 		this.session = session;
 	}
 
+	/**
+	 * @name selectBestList \n
+	 * @brief 마감 기간 순이 가까울수록 탑10 리스트 출력 \n
+	 * @return List<AbTest> \n
+	 * @author park \n
+	 * @version 1.0 \n
+	 * @see None \n
+	 */
 	public List<AbTest> selectBestList() {
 		return session.selectList("abtest.selectBsetList");
 	}// selectBestList end
-	
 
 	@Override
 	public int insert(AbTest abTest) {
-		return session.insert("abtest.insert",abTest);
+		return session.insert("abtest.insert", abTest);
 	}
 
 	@Override
 	public AbTest selectOne(int no) {
-		return session.selectOne("abtest.selectOne",no);
+		return session.selectOne("abtest.selectOne", no);
 	}
 
 	@Override
 	public List<AbTest> selectList(PageVO pageVO) {
-		return session.selectList("abtest.selectList",pageVO);
+		return session.selectList("abtest.selectList", pageVO);
 	}
 
 	@Override
@@ -43,7 +50,7 @@ public class AbTestDAOImpl implements AbTestDAO {
 
 	@Override
 	public int selectFinished(int no) {
-		return session.selectOne("abtest.selectFinished",no);
+		return session.selectOne("abtest.selectFinished", no);
 	}
 
 	@Override
@@ -58,12 +65,12 @@ public class AbTestDAOImpl implements AbTestDAO {
 
 	@Override
 	public List<AbTest> selectMyAbTest(int userNo) {
-		return session.selectList("abtest.selectMyAbTest",userNo);
+		return session.selectList("abtest.selectMyAbTest", userNo);
 	}
 
 	@Override
 	public List<AbTest> selectIVoed(int userNo) {
-		return session.selectList("abtest.selectIVoed",userNo);
+		return session.selectList("abtest.selectIVoed", userNo);
 	}
 
 }

@@ -23,11 +23,11 @@ public interface GameDAO {
 	public int downloads(int gameNo);
 
 	public int selectHeart(int gameNo);
-	
+
 	public int insertGame(Game game);
-	
-	public  List<Game> selectHerartList(PageVO pageVO);
-	
-	public  int selectHeartCount(int userNo) ;
-	
+
+	public List<Game> selectHerartList(PageVO pageVO);
+
+	public int selectHeartCount(int userNo);
+
 }

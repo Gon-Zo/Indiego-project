@@ -3,12 +3,9 @@ package com.jmt.indiego.vo;
 import java.sql.Timestamp;
 
 public class User {
-
-
 	private int userNo;
-	
-	private String id,pwd,nickName,email,phoneNum,address1,address2,profileImg,userMode,careerV,portfolioV,addressV,phoneV;
-	
+	private String id, pwd, nickName, email, phoneNum, address1, address2, profileImg, userMode, careerV, portfolioV,
+			addressV, phoneV;
 	private Timestamp regdate;
 
 	public User() {
@@ -134,5 +131,5 @@ public class User {
 	public void setRegdate(Timestamp regdate) {
 		this.regdate = regdate;
 	}
-	
+
 }

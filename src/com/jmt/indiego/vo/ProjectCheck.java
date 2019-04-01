@@ -2,11 +2,9 @@ package com.jmt.indiego.vo;
 
 public class ProjectCheck {
 
-	
-	
-	private int no,userNo,parentStepNo,projectNo;
-	private String title,content;
-	
+	private int no, userNo, parentStepNo, projectNo;
+	private String title, content;
+
 	public ProjectCheck() {
 		// TODO Auto-generated constructor stub
 	}
@@ -58,6 +56,5 @@ public class ProjectCheck {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	
-	
+
 }

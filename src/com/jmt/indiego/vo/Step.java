@@ -4,10 +4,10 @@ import java.sql.Timestamp;
 
 public class Step {
 
-	private int no,seqence;
-	private String title,contents,filename;
+	private int no, seqence;
+	private String title, contents, filename;
 	private Timestamp regdate;
-	
+
 	public Step() {
 		// TODO Auto-generated constructor stub
 	}
@@ -59,6 +59,5 @@ public class Step {
 	public void setRegdate(Timestamp regdate) {
 		this.regdate = regdate;
 	}
-	
-	
+
 }

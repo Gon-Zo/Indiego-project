@@ -7,93 +7,129 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-4.3.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-<jee:jndi-lookup id="dataSource" jndi-name="java:comp/env/oraclexe"/>
+	<jee:jndi-lookup id="dataSource"
+		jndi-name="java:comp/env/oraclexe" />
 
-<bean id="sqlSessionFactory"  
-	p:dataSource-ref="dataSource" 
-	p:configLocation="WEB-INF/mybatis-config.xml" 
-	class="org.mybatis.spring.SqlSessionFactoryBean"/>
-	
-	<bean id="sqlSession" 
-	c:sqlSessionFactory-ref="sqlSessionFactory" 
-	class="org.mybatis.spring.SqlSessionTemplate"/>
+	<bean id="sqlSessionFactory" p:dataSource-ref="dataSource"
+		p:configLocation="WEB-INF/mybatis-config.xml"
+		class="org.mybatis.spring.SqlSessionFactoryBean" />
 
-<!-- dao -->
-<bean id="abChoiceDAO" p:session-ref="sqlSession" class="com.jmt.indiego.dao.AbChoiceDAOImpl"/>
-<bean id="abTestDAO" p:session-ref="sqlSession" class="com.jmt.indiego.dao.AbTestDAOImpl"/>
-<bean id="attackDAO" p:session-ref="sqlSession" class="com.jmt.indiego.dao.AttackDAOImpl"/>
-<bean id="badgeDAO" p:session-ref="sqlSession" class="com.jmt.indiego.dao.BadgeDAOImpl"/>
-<bean id="bookmarkDAO" p:session-ref="sqlSession" class="com.jmt.indiego.dao.BookmarkDAOImpl"/>
-<bean id="buyListDAO" p:session-ref="sqlSession" class="com.jmt.indiego.dao.BuyListDAOImpl"/>
-<bean id="carrerDAO" p:session-ref="sqlSession" class="com.jmt.indiego.dao.CarrerDAOImpl"/>
-<bean id="checkListDAO" p:session-ref="sqlSession" class="com.jmt.indiego.dao.CheckListDAOImpl"/>
-<bean id="checkPeopleDAO" p:session-ref="sqlSession" class="com.jmt.indiego.dao.CheckPeopleDAOImpl"/>
-<bean id="childStepDAO" p:session-ref="sqlSession" class="com.jmt.indiego.dao.ChildStepDAOImpl"/>
-<bean id="followDAO" p:session-ref="sqlSession" class="com.jmt.indiego.dao.FollowDAOImpl"/>
-<bean id="freeDAO" p:session-ref="sqlSession" class="com.jmt.indiego.dao.FreeDAOImpl"/>
-<bean id="gameDAO" p:session-ref="sqlSession" class="com.jmt.indiego.dao.GameDAOImpl"/>
-<bean id="gameSpecDAO" p:session-ref="sqlSession" class="com.jmt.indiego.dao.GameSpecDAOImpl"/>
-<bean id="genreDAO" p:session-ref="sqlSession" class="com.jmt.indiego.dao.GenreDAOImpl"/>
-<bean id="ideaDAO" p:session-ref="sqlSession" class="com.jmt.indiego.dao.IdeaDAOImpl"/>
-<bean id="imageDAO" p:session-ref="sqlSession" class="com.jmt.indiego.dao.ImageDAOImpl"/>
-<bean id="inderReviewDAO" p:session-ref="sqlSession" class="com.jmt.indiego.dao.InderReviewDAOImpl"/>
-<bean id="likeDAO" p:session-ref="sqlSession" class="com.jmt.indiego.dao.LikeDAOImpl"/>
-<bean id="newspeedDAO" p:session-ref="sqlSession" class="com.jmt.indiego.dao.NewspeedDAOImpl"/>
-<bean id="noticeDAO" p:session-ref="sqlSession" class="com.jmt.indiego.dao.NoticeDAOImpl"/>
-<bean id="parentStepDAO" p:session-ref="sqlSession" class="com.jmt.indiego.dao.ParentStepDAOImpl"/>
-<bean id="portfolioDAO" p:session-ref="sqlSession" class="com.jmt.indiego.dao.PortfolioDAOImpl"/>
-<bean id="projectCheckDAO" p:session-ref="sqlSession" class="com.jmt.indiego.dao.ProjectCheckDAOImpl"/>
-<bean id="projectDAO" p:session-ref="sqlSession" class="com.jmt.indiego.dao.ProjectDAOImpl"/>
-<bean id="projectFIleDAO" p:session-ref="sqlSession" class="com.jmt.indiego.dao.ProjectFIleDAOImpl"/>
-<bean id="projectUpdateDAO" p:session-ref="sqlSession" class="com.jmt.indiego.dao.ProjectUpdateDAOImpl"/>
-<bean id="questionDAO" p:session-ref="sqlSession" class="com.jmt.indiego.dao.QuestionDAOImpl"/>
-<bean id="replyDAO" p:session-ref="sqlSession" class="com.jmt.indiego.dao.ReplyDAOImpl"/>
-<bean id="reviewDAO" p:session-ref="sqlSession" class="com.jmt.indiego.dao.ReviewDAOImpl"/>
-<bean id="sosDAO" p:session-ref="sqlSession" class="com.jmt.indiego.dao.SosDAOImpl"/>
-<bean id="statusDAO" p:session-ref="sqlSession" class="com.jmt.indiego.dao.StatusDAOImpl"/>
-<bean id="teamDAO" p:session-ref="sqlSession" class="com.jmt.indiego.dao.TeamDAOImpl"/>
-<bean id="stepDAO" p:session-ref="sqlSession" class="com.jmt.indiego.dao.StepDAOImpl"/>
-<bean id="userBadgeDAO" p:session-ref="sqlSession" class="com.jmt.indiego.dao.UserBadgeDAOImpl"/>
-<bean id="usersDAO" p:session-ref="sqlSession" class="com.jmt.indiego.dao.UsersDAOImpl"/>
+	<bean id="sqlSession" c:sqlSessionFactory-ref="sqlSessionFactory"
+		class="org.mybatis.spring.SqlSessionTemplate" />
 
-<!--service  -->
+	<!-- dao -->
+	<bean id="abChoiceDAO" p:session-ref="sqlSession"
+		class="com.jmt.indiego.dao.AbChoiceDAOImpl" />
+	<bean id="abTestDAO" p:session-ref="sqlSession"
+		class="com.jmt.indiego.dao.AbTestDAOImpl" />
+	<bean id="attackDAO" p:session-ref="sqlSession"
+		class="com.jmt.indiego.dao.AttackDAOImpl" />
+	<bean id="badgeDAO" p:session-ref="sqlSession"
+		class="com.jmt.indiego.dao.BadgeDAOImpl" />
+	<bean id="bookmarkDAO" p:session-ref="sqlSession"
+		class="com.jmt.indiego.dao.BookmarkDAOImpl" />
+	<bean id="buyListDAO" p:session-ref="sqlSession"
+		class="com.jmt.indiego.dao.BuyListDAOImpl" />
+	<bean id="carrerDAO" p:session-ref="sqlSession"
+		class="com.jmt.indiego.dao.CarrerDAOImpl" />
+	<bean id="checkListDAO" p:session-ref="sqlSession"
+		class="com.jmt.indiego.dao.CheckListDAOImpl" />
+	<bean id="checkPeopleDAO" p:session-ref="sqlSession"
+		class="com.jmt.indiego.dao.CheckPeopleDAOImpl" />
+	<bean id="childStepDAO" p:session-ref="sqlSession"
+		class="com.jmt.indiego.dao.ChildStepDAOImpl" />
+	<bean id="followDAO" p:session-ref="sqlSession"
+		class="com.jmt.indiego.dao.FollowDAOImpl" />
+	<bean id="freeDAO" p:session-ref="sqlSession"
+		class="com.jmt.indiego.dao.FreeDAOImpl" />
+	<bean id="gameDAO" p:session-ref="sqlSession"
+		class="com.jmt.indiego.dao.GameDAOImpl" />
+	<bean id="gameSpecDAO" p:session-ref="sqlSession"
+		class="com.jmt.indiego.dao.GameSpecDAOImpl" />
+	<bean id="genreDAO" p:session-ref="sqlSession"
+		class="com.jmt.indiego.dao.GenreDAOImpl" />
+	<bean id="ideaDAO" p:session-ref="sqlSession"
+		class="com.jmt.indiego.dao.IdeaDAOImpl" />
+	<bean id="imageDAO" p:session-ref="sqlSession"
+		class="com.jmt.indiego.dao.ImageDAOImpl" />
+	<bean id="inderReviewDAO" p:session-ref="sqlSession"
+		class="com.jmt.indiego.dao.InderReviewDAOImpl" />
+	<bean id="likeDAO" p:session-ref="sqlSession"
+		class="com.jmt.indiego.dao.LikeDAOImpl" />
+	<bean id="newspeedDAO" p:session-ref="sqlSession"
+		class="com.jmt.indiego.dao.NewspeedDAOImpl" />
+	<bean id="noticeDAO" p:session-ref="sqlSession"
+		class="com.jmt.indiego.dao.NoticeDAOImpl" />
+	<bean id="parentStepDAO" p:session-ref="sqlSession"
+		class="com.jmt.indiego.dao.ParentStepDAOImpl" />
+	<bean id="portfolioDAO" p:session-ref="sqlSession"
+		class="com.jmt.indiego.dao.PortfolioDAOImpl" />
+	<bean id="projectCheckDAO" p:session-ref="sqlSession"
+		class="com.jmt.indiego.dao.ProjectCheckDAOImpl" />
+	<bean id="projectDAO" p:session-ref="sqlSession"
+		class="com.jmt.indiego.dao.ProjectDAOImpl" />
+	<bean id="projectFIleDAO" p:session-ref="sqlSession"
+		class="com.jmt.indiego.dao.ProjectFIleDAOImpl" />
+	<bean id="projectUpdateDAO" p:session-ref="sqlSession"
+		class="com.jmt.indiego.dao.ProjectUpdateDAOImpl" />
+	<bean id="questionDAO" p:session-ref="sqlSession"
+		class="com.jmt.indiego.dao.QuestionDAOImpl" />
+	<bean id="replyDAO" p:session-ref="sqlSession"
+		class="com.jmt.indiego.dao.ReplyDAOImpl" />
+	<bean id="reviewDAO" p:session-ref="sqlSession"
+		class="com.jmt.indiego.dao.ReviewDAOImpl" />
+	<bean id="sosDAO" p:session-ref="sqlSession"
+		class="com.jmt.indiego.dao.SosDAOImpl" />
+	<bean id="statusDAO" p:session-ref="sqlSession"
+		class="com.jmt.indiego.dao.StatusDAOImpl" />
+	<bean id="teamDAO" p:session-ref="sqlSession"
+		class="com.jmt.indiego.dao.TeamDAOImpl" />
+	<bean id="stepDAO" p:session-ref="sqlSession"
+		class="com.jmt.indiego.dao.StepDAOImpl" />
+	<bean id="userBadgeDAO" p:session-ref="sqlSession"
+		class="com.jmt.indiego.dao.UserBadgeDAOImpl" />
+	<bean id="usersDAO" p:session-ref="sqlSession"
+		class="com.jmt.indiego.dao.UsersDAOImpl" />
 
-<!-- 노승현 -->
-<bean id="projectService"   p:parentStepDAO-ref="parentStepDAO" 
-							p:teamDAO-ref="teamDAO"
-							p:projectCheckDAO-ref="projectCheckDAO"
-							p:projectDAO-ref="projectDAO" 
-							p:genreDAO-ref="genreDAO"  
-							p:paginateUtil-ref="paginateUtil"
-							class="com.jmt.indiego.service.ProjectServiceImpl"/>
+	<!--service -->
+	<bean id="projectService" p:ideaDAO-ref="ideaDAO"
+		p:parentStepDAO-ref="parentStepDAO" p:teamDAO-ref="teamDAO"
+		p:projectCheckDAO-ref="projectCheckDAO" p:projectDAO-ref="projectDAO"
+		p:genreDAO-ref="genreDAO" p:paginateUtil-ref="paginateUtil"
+		class="com.jmt.indiego.service.ProjectServiceImpl" />
 
-<!-- //박정규 -->
-<bean 
-id="gameService" 
-p:paginateUtil-ref="paginateUtil" 
-p:gameDAO-ref="gameDAO" 
-p:imageDAO-ref="imageDAO"
-p:reviewDAO-ref="reviewDAO"
-p:teamDAO-ref="teamDAO"
-p:gameSpecDAO-ref="gameSpecDAO"
-p:attackDAO-ref="attackDAO"
-p:questionDAO-ref="questionDAO"
-p:replyDAO-ref="replyDAO"
-p:likeDAO-ref="likeDAO"
-class="com.jmt.indiego.service.GameServiceImpl"/>
-<bean id="freeService" p:freeDAO-ref="freeDAO" class="com.jmt.indiego.service.FreeServiceImpl"/>
-<bean id="replyService" p:replyDAO-ref="replyDAO" class="com.jmt.indiego.service.ReplyServiceImpl"/>
-<bean id="ideaService"  p:ideaDAO-ref="ideaDAO" class="com.jmt.indiego.service.IdeaServiceImpl"/>
+	<bean id="gameService" p:paginateUtil-ref="paginateUtil"
+		p:gameDAO-ref="gameDAO" p:imageDAO-ref="imageDAO"
+		p:reviewDAO-ref="reviewDAO" p:teamDAO-ref="teamDAO"
+		p:gameSpecDAO-ref="gameSpecDAO" p:attackDAO-ref="attackDAO"
+		p:questionDAO-ref="questionDAO" p:replyDAO-ref="replyDAO"
+		p:likeDAO-ref="likeDAO"
+		class="com.jmt.indiego.service.GameServiceImpl" />
+	<bean id="freeService" p:freeDAO-ref="freeDAO"
+		class="com.jmt.indiego.service.FreeServiceImpl" />
+	<bean id="replyService" p:replyDAO-ref="replyDAO"
+		class="com.jmt.indiego.service.ReplyServiceImpl" />
+	<bean id="ideaService" p:ideaDAO-ref="ideaDAO"
+		class="com.jmt.indiego.service.IdeaServiceImpl" />
 
-<!-- 김혜련 -->
-<bean id="abTestService" p:paginateUtil-ref="paginateUtil" p:abTestDAO-ref="abTestDAO" class="com.jmt.indiego.service.AbTestServiceImpl"/>
-<bean id="abChoiceService" p:abChoiceDAO-ref="abChoiceDAO" class="com.jmt.indiego.service.AbChoiceServiceImpl"/>
+	<bean id="abTestService" p:paginateUtil-ref="paginateUtil"
+		p:abTestDAO-ref="abTestDAO" p:abChoiceDAO-ref="abChoiceDAO"
+		class="com.jmt.indiego.service.AbTestServiceImpl" />
+	<bean id="abChoiceService" p:abChoiceDAO-ref="abChoiceDAO"
+		class="com.jmt.indiego.service.AbChoiceServiceImpl" />
 
-<!-- 방미리 -->
-<bean id="usersService" p:buyListDAO-ref="buyListDAO" p:gameDAO-ref="gameDAO" p:reviewDAO-ref="reviewDAO" p:freeDAO-ref="freeDAO" p:paginateUtil-ref="paginateUtil" p:attackDAO-ref="attackDAO" p:followDAO-ref="followDAO" p:userBadgeDAO-ref="userBadgeDAO" p:badgeDAO-ref="badgeDAO" p:userDAO-ref="usersDAO" class="com.jmt.indiego.service.UsersServiceImpl"/>
+	<bean id="usersService" p:replyDAO-ref="replyDAO"
+		p:abTestDAO-ref="abTestDAO" p:buyListDAO-ref="buyListDAO"
+		p:gameDAO-ref="gameDAO" p:reviewDAO-ref="reviewDAO"
+		p:freeDAO-ref="freeDAO" p:paginateUtil-ref="paginateUtil"
+		p:attackDAO-ref="attackDAO" p:followDAO-ref="followDAO"
+		p:userBadgeDAO-ref="userBadgeDAO" p:badgeDAO-ref="badgeDAO"
+		p:userDAO-ref="usersDAO"
+		class="com.jmt.indiego.service.UsersServiceImpl" />
 
-<!-- Util -->
-<bean id="fileRenameUtil" class="com.jmt.indiego.util.FileRenameUtil"/>
-<bean id="paginateUtil" class="com.jmt.indiego.util.PaginateUtil"/>
+	<!-- Util -->
+	<bean id="fileRenameUtil"
+		class="com.jmt.indiego.util.FileRenameUtil" />
+	<bean id="paginateUtil" class="com.jmt.indiego.util.PaginateUtil" />
 
 </beans>

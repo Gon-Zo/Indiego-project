@@ -9,12 +9,13 @@ public interface AttackDAO {
 	public List<Attack> selectListPage(PageVO pageVO);
 
 	public int selectAttackTotal(int no);
-	
-	public List<Attack> selectInderList(String nickName) ;
-	
-	public List<Attack> selectAttackList() ;
-	public int selectAttackCount(int userNo) ;
-	
-	public List<Attack> selectProfileAttack(PageVO pageVO) ;
+
+	public List<Attack> selectInderList(String nickName);
+
+	public List<Attack> selectAttackList();
+
+	public int selectAttackCount(int userNo);
+
+	public List<Attack> selectProfileAttack(PageVO pageVO);
 
 }

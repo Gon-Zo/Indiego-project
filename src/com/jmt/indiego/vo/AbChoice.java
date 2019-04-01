@@ -4,11 +4,16 @@ import java.sql.Date;
 
 public class AbChoice {
 	private int no, userNo, contentsNo;
-	private String  choice;
+	private String choice;
 	private Date regdate;
-	
+
 	public AbChoice() {
 		super();
+	}
+
+	public AbChoice(int userNo, int contentNo) {
+		this.userNo = userNo;
+		this.contentsNo = contentNo;
 	}
 
 	public int getNo() {
@@ -50,6 +55,5 @@ public class AbChoice {
 	public void setRegdate(Date regdate) {
 		this.regdate = regdate;
 	}
-	
-	
+
 }
