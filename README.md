@@ -1,2 +1,2 @@
-# Indiego-project
+# Indigo-Project
 .
