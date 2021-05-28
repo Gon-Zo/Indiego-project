@@ -32,5 +32,5 @@
 ### 게임 메인 페이지 & 게임 검색 팝업
 <img width="928" alt="스크린샷 2021-05-28 오후 5 08 08" src="https://user-images.githubusercontent.com/53357210/119951921-6fd47300-bfd7-11eb-8495-d569774c42a6.png">
 
-### 게임 상ㅅ 페이지
+### 게임 상세 페이지
 <img width="938" alt="스크린샷 2021-05-28 오후 5 08 15" src="https://user-images.githubusercontent.com/53357210/119951925-706d0980-bfd7-11eb-975f-4a5407c403f7.png">
